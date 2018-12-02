@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export TIMEZONE="Europe/Rome"
+export TZ="$TIMEZONE"
 export ADB_HOST=adbd
 
 _tmuxinit() {

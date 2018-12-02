@@ -37,6 +37,9 @@ RUN yes | $android_sdk_root/tools/bin/sdkmanager \
   'platforms;android-28' 'build-tools;28.0.3' platform-tools
 RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
+RUN xbps-install -Sy tzdata
+RUN ln -snvf "/usr/share/zoneinfo/Europe/Rome" /etc/localtime && \
+  echo "Europe/Rome" > /etc/timezone
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
