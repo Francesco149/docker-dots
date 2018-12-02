@@ -18,6 +18,7 @@ RUN bash -c "\
 RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN xbps-install -Sy go
 RUN xbps-install -Sy nodejs
+RUN xbps-install -Sy gtk+-devel
 RUN xbps-install -Sy avr-gcc avr-binutils avr-libc
 RUN xbps-install -Sy boost-devel
 RUN xbps-install -Sy protobuf
