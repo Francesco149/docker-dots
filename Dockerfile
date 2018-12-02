@@ -2,7 +2,7 @@ FROM voidlinux/voidlinux
 RUN xbps-install -Syu
 RUN xbps-install -Sy vim gcc tmux git openssh bash glibc-locales wget \
   curl ncurses sudo make automake pkg-config libtool autoconf-archive \
-  libressl-devel
+  libressl-devel tzdata
 RUN sed -i -e 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' \
   /etc/default/libc-locales && \
   xbps-reconfigure -f glibc-locales && \
@@ -37,7 +37,6 @@ RUN yes | $android_sdk_root/tools/bin/sdkmanager \
   'platforms;android-28' 'build-tools;28.0.3' platform-tools
 RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
-RUN xbps-install -Sy tzdata
 RUN ln -snvf "/usr/share/zoneinfo/Europe/Rome" /etc/localtime && \
   echo "Europe/Rome" > /etc/timezone
 EXPOSE 22
