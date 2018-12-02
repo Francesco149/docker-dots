@@ -16,7 +16,7 @@ docker run --rm \
   --link adbd:adbd \
   --volume ~/$name:/home/loli \
   --volume ~/.ssh:/home/loli/.ssh \
-  --volume ~/toolchains/fsl-imx-fb:/opt/fsl-imx-fb \
+  --volume ~/memevault/toolchains/fsl-imx-fb:/opt/fsl-imx-fb \
   --device /dev/ttyACM1 \
   --name $name \
   --hostname $name \
