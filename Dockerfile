@@ -3,6 +3,9 @@ RUN xbps-install -Syu
 RUN xbps-install -Sy vim gcc tmux git openssh bash glibc-locales wget \
   curl ncurses sudo make automake pkg-config libtool autoconf-archive \
   libressl-devel tzdata
+RUN xbps-install -Sy void-repo-multilib && \
+  xbps-install -Sy && \
+  xbps-install -Sy gcc-multilib
 RUN sed -i -e 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' \
   /etc/default/libc-locales && \
   xbps-reconfigure -f glibc-locales && \
@@ -18,7 +21,7 @@ RUN bash -c "\
 RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN xbps-install -Sy go
 RUN xbps-install -Sy nodejs
-RUN xbps-install -Sy gtk+-devel
+RUN xbps-install -Sy gtk+-devel gtk+-devel-32bit
 RUN xbps-install -Sy avr-gcc avr-binutils avr-libc
 RUN xbps-install -Sy python python-pip
 RUN pip install awscli
