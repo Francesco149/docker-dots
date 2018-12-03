@@ -42,6 +42,7 @@ RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
 RUN ln -snvf "/usr/share/zoneinfo/Europe/Rome" /etc/localtime && \
   echo "Europe/Rome" > /etc/timezone
+RUN xbps-install xz
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
