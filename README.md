@@ -45,6 +45,9 @@ ExecStop=/usr/bin/docker rm -f memevault
 Restart=always
 User=loli
 Group=loli
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 which you would put in ```/etc/systemd/system/memevault.service``` ,
