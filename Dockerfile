@@ -2,7 +2,7 @@ FROM voidlinux/voidlinux
 RUN xbps-install -Syu
 RUN xbps-install -Sy vim gcc tmux git openssh bash glibc-locales wget \
   curl ncurses sudo make automake pkg-config libtool autoconf-archive \
-  libressl-devel tzdata
+  libressl-devel tzdata xz
 RUN xbps-install -Sy void-repo-multilib && \
   xbps-install -Sy && \
   xbps-install -Sy gcc-multilib
@@ -45,7 +45,6 @@ RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
 RUN ln -snvf "/usr/share/zoneinfo/Europe/Rome" /etc/localtime && \
   echo "Europe/Rome" > /etc/timezone
-RUN xbps-install xz
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
