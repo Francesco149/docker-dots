@@ -10,7 +10,10 @@ RUN sed -i -e 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' \
   /etc/default/libc-locales && \
   xbps-reconfigure -f glibc-locales && \
   echo "LANG=en_US.UTF-8" > /etc/locale.conf
-RUN echo 'TIMEZONE="Europe/Rome"' >> /etc/rc.conf
+ENV TIMEZONE="Europe/Rome"
+RUN echo "TIMEZONE=\"$TIMEZONE\"" >> /etc/rc.conf && \
+  ln -snvf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime && \
+  echo "$TIMEZONE" > /etc/timezone
 RUN useradd -s /bin/bash -d /home/loli loli
 RUN passwd -d root
 RUN echo "loli ALL=NOPASSWD: ALL" >> /etc/sudoers
@@ -43,8 +46,6 @@ RUN yes | $android_sdk_root/tools/bin/sdkmanager \
   'platforms;android-28' 'build-tools;28.0.3' platform-tools
 RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
-RUN ln -snvf "/usr/share/zoneinfo/Europe/Rome" /etc/localtime && \
-  echo "Europe/Rome" > /etc/timezone
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
