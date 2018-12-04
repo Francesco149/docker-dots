@@ -47,6 +47,7 @@ RUN yes | $android_sdk_root/tools/bin/sdkmanager \
 RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
 RUN xbps-install -Sy valgrind
+RUN xbps-install -Sy man man-pages-posix
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
