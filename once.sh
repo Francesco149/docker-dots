@@ -9,14 +9,13 @@ dir="$(dirname "$0")"
 abspath="$(realpath "$dir")"
 olddir="$(pwd)"
 cd $abspath
-
 name="memevault"
 docker build -t $name . && \
 docker run --rm \
   --link adbd:adbd \
-  --volume ~/$name:/home/loli \
+  --volume "/$name":/home/loli \
   --volume ~/.ssh:/home/loli/.ssh \
-  --volume ~/memevault/toolchains/fsl-imx-fb:/opt/fsl-imx-fb \
+  --volume "/$name/toolchains/fsl-imx-fb":/opt/fsl-imx-fb \
   --device /dev/ttyACM1 \
   --name $name \
   --hostname $name \
