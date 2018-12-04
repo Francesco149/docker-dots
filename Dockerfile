@@ -48,6 +48,7 @@ RUN xbps-install -Sy shellcheck
 RUN xbps-install -Sy neofetch
 RUN xbps-install -Sy valgrind
 RUN xbps-install -Sy man man-pages-posix
+RUN xbps-install -Sy cvs
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
