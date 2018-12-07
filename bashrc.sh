@@ -12,7 +12,7 @@ _tmuxinit() {
     return $?
   fi
 
-  if [ ${USER} != "loli" ] || [ ! -f /.dockerenv ] ; then
+  if [ "$(whoami)" != "loli" ] || [ ! -f /.dockerenv ] ; then
     tmux
     return $?
   fi
@@ -61,7 +61,7 @@ alias xr='sudo xbps-remove -R'
 alias xq='xbps-query -Rs'
 alias xl='xbps-query -l'
 
-if [[ ${EUID} == 0 ]] ; then
+if [[ $(id -u) == 0 ]] ; then
     PS1='
 \[\033[01;31m\]( OwO) \
 \[\033[01;33m\]\u@\h \
