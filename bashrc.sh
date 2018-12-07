@@ -5,6 +5,7 @@ export EDITOR=$VISUAL
 export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
 export ADB_HOST=adbd
+export PATH="$PATH:~/bin"
 
 _tmuxinit() {
   if tmux attach; then
