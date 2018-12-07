@@ -85,7 +85,7 @@ autoname() {
   basedir="${1-.}"
   suffix="${2-}"
   while true; do
-    name="$basedir/$( date +%F_%H-%M-%S_${n}${suffix} )"
+    name="$basedir/$( date "+%F_%H-%M-%S_${n}${suffix}" )"
     [ ! -e "$name" ] && break
     n=$(( n + 1 ))
   done
