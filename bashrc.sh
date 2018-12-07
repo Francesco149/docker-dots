@@ -11,7 +11,7 @@ _tmuxinit() {
     return $?
   fi
 
-  if [[ ${EUID} == 0 ]] ; then
+  if [ ${USER} != "loli" ] || [ ! -f /.dockerenv ] ; then
     tmux
     return $?
   fi
