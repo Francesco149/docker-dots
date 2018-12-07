@@ -60,6 +60,7 @@ alias xu='sudo xbps-install -Suv'
 alias xr='sudo xbps-remove -R'
 alias xq='xbps-query -Rs'
 alias xl='xbps-query -l'
+alias e='echo $?'
 
 if [[ $(id -u) == 0 ]] ; then
     PS1='
