@@ -104,7 +104,7 @@ autoname() {
 #
 recent() {
   statcmd="gstat"
-  if ! which "$statcmd" 2>&1 >/dev/null; then
+  if [ ! -v "$statcmd" ]; then
     statcmd="stat"
   fi
   unset sedexp
