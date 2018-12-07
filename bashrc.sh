@@ -49,7 +49,10 @@ _tmuxinit() {
 
 # -------------------------------------------------------------------------
 
-[[ $- != *i* ]] && return
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
 
 export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
@@ -62,7 +65,7 @@ alias xq='xbps-query -Rs'
 alias xl='xbps-query -l'
 alias e='echo $?'
 
-if [[ $(id -u) == 0 ]] ; then
+if [ "$(id -u)" -eq 0 ] ; then
   PS1=''\
 '\[\033[01;31m\]( OwO) '\
 '\[\033[01;33m\]\u@\h '\
