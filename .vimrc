@@ -11,6 +11,7 @@ set autoindent
 set nowrap
 set modeline
 set modelines=5
+set noswapfile
 
 function NoTabs()
     set expandtab
