@@ -55,7 +55,10 @@ export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
 alias ls='ls --color=auto'
 alias t='_tmuxinit'
 alias xi='sudo xbps-install'
+alias xu='sudo xbps-install -Suv'
+alias xr='sudo xbps-remove -R'
 alias xq='xbps-query -Rs'
+alias xl='xbps-query -l'
 
 if [[ ${EUID} == 0 ]] ; then
     PS1='\[\033[01;31m\]( OwO) \[\033[01;33m\]\u@\h \[\033[01;30m\]\w \$\[\033[00m\] '
