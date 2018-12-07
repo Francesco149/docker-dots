@@ -8,6 +8,7 @@ export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
 export ADB_HOST=adbd
 export PATH="$PATH:~/bin"
+export PATH="$PATH:~/.local/bin"
 
 _tmuxinit() {
   if tmux attach; then
