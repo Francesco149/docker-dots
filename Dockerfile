@@ -51,6 +51,8 @@ RUN xbps-install -Sy man man-pages-posix
 RUN xbps-install -Sy cvs
 RUN xbps-install -Sy ruby && gem install gist
 RUN xbps-install -Sy bdftopcf
+RUN xbps-install -Sy ffmpeg
+RUN pip install streamlink youtube_dl
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
