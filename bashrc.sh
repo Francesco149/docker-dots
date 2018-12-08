@@ -124,3 +124,48 @@ recent() {
     sed /^\.$/d |
     sed -n "${sedexp-1p;}"
 }
+
+ffrectsel() {
+    rect="$(xrectsel)"                       # wxh+x+y
+    size="$(echo "${rect}" | cut -d'+' -f1)" # wxh
+    w="$(echo "${size}" | cut -d'x' -f1)"    # w
+    h="$(echo "${size}" | cut -d'x' -f2)"    # h
+    w=$((w / 2 * 2))                         # round w h to multiples of 2
+    h=$((h / 2 * 2))
+    coords="$(echo "${rect}" | cut -d'+' -f2- | sed s/\+/,/g)" # x,y
+    echo "|-s ${w}x${h} -i ${DISPLAY}+${coords}" | sed s/\|//g
+}
+
+cast() {
+  # shellcheck disable=SC2119
+  ffmpeg \
+    -f x11grab \
+    -thread_queue_size 512 \
+    "${@}" \
+    -c:v libx264 -r 60 \
+    -vf "${CAST_VF:-null}" \
+    -preset "${CAST_PRESET:-veryfast}" \
+    -tune "${CAST_TUNE:-zerolatency}" \
+    -pix_fmt "${CAST_PIXFMT:-yuv420p}" \
+    -crf "${CAST_CRF:-23}" \
+    -movflags "${CAST_MOVFLAGS:-+faststart}" \
+    "$(autoname).mp4"
+}
+
+ucast() {
+  # shellcheck disable=SC2119
+  ffmpeg \
+    -f x11grab \
+    -thread_queue_size 512 \
+    "${@}" \
+    -c:v libx264rgb -qp 0 -r 60 \
+    -preset "${CAST_PRESET:-ultrafast}" \
+    "$(autoname).mp4"
+}
+
+# shellcheck disable=SC1004
+alias fcast='CAST_VF="scale=960:540:flags=neighbor" \
+  cast -s 1920x1080 -i ${DISPLAY}+0,0'
+alias fucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0'
+alias scast='cast $(ffrectsel)'
+alias sucast='ucast $(ffrectsel)'
