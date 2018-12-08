@@ -86,10 +86,11 @@ fi
 
 # generate an unique filename
 #
+# shellcheck disable=SC2120
 autoname() {
   n=0
-  basedir="${1-.}"
-  suffix="${2-}"
+  basedir="${1:-.}"
+  suffix="${2:-}"
   while true; do
     name="$basedir/$( date "+%F_%H-%M-%S_${n}${suffix}" )"
     [ ! -e "$name" ] && break
