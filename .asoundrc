@@ -44,7 +44,7 @@ pcm.dmixer {
 pcm.dmixerloop {
   type dmix
   ipc_key 2048
-  slave.pcm "hw:Loopback"
+  slave.pcm "hw:Loopback,0,0"
   slave {
     period_size 32
     buffer_size 1024
