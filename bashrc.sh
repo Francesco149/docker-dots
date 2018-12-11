@@ -59,6 +59,7 @@ esac
 
 export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
+alias startx='exec startx'
 alias ls='ls --color=auto'
 alias t='_tmuxinit'
 alias xi='sudo xbps-install'
