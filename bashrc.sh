@@ -170,3 +170,16 @@ alias fcast='CAST_VF="scale=960:540:flags=neighbor" \
 alias fucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0'
 alias scast='cast $(ffrectsel)'
 alias sucast='ucast $(ffrectsel)'
+
+tgrep() {
+  if [ "$#" -lt 1 ]; then
+    echo "recursively grep directory and sort result by modification time"
+    echo "usage: tgrep text [directory]"
+    return 1
+  fi
+  find "${2:-.}" -type f \
+    -exec grep -q "$1" {} \; \
+    -exec find {} -printf "%T@ " \; \
+    -exec grep -H "$1" {} \; |
+  sort -n | awk '{ $1=""; print $0 }'
+}
