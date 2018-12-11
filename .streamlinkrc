@@ -1,0 +1,6 @@
+player=mpv --cache=no
+hls-segment-threads=3
+hds-segment-threads=3
+stream-segment-threads=3
+hls-live-edge=3
+player-passthrough=hls,http
