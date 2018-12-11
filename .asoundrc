@@ -1,0 +1,81 @@
+pcm.snd_card {
+  type hw
+  card PCH
+}
+
+pcm.loopin {
+  type plug
+  slave.pcm "hw:Loopback,0,0"
+}
+
+pcm.loopout {
+  type plug
+  slave.pcm "hw:Loopback,1,0"
+}
+
+pcm.!default {
+  type asym
+  playback.pcm "multi"
+  capture.pcm "dsnooper"
+}
+
+ctl.!default {
+  type hw
+  card PCH
+}
+
+pcm.dsnooper {
+  type dsnoop
+  ipc_key 4096
+  slave.pcm "snd_card"
+  slave {
+    period_time 1
+    buffer_size 1024
+    rate 48000
+  }
+}
+
+pcm.dmixer {
+  type dmix
+  ipc_key 1024
+  slave.pcm "snd_card"
+  slave {
+    period_time 1
+    buffer_size 1024
+    rate 48000
+  }
+}
+
+pcm.dmixerloop {
+  type dmix
+  ipc_key 2048
+  slave.pcm "loopin"
+  slave {
+    period_time 1
+    buffer_size 1024
+    rate 48000
+  }
+}
+
+pcm.multi {
+  type plug
+
+  slave.pcm {
+    type multi
+    slaves {
+      a { channels 2 pcm "dmixer" }
+      b { channels 2 pcm "loopin" }
+    }
+    bindings {
+      0 { slave a channel 0 }
+      1 { slave a channel 1 }
+      2 { slave b channel 0 }
+      3 { slave b channel 1 }
+    }
+  }
+
+  ttable [
+    [ 1 0 1 0 ]
+    [ 0 1 0 1 ]
+  ]
+}
