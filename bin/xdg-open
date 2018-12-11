@@ -2,13 +2,13 @@
 
 case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
   http://*|https://*)
-    exec qutebrowser "$1" ;;
+    exec url-open "$1" ;;
   tg://*)
     exec Telegram -- "$1" ;;
   *.jpeg|*.jpg|*.png|*.bmp|*.gif|*.tga|*.ppm|*.dds|*.webp)
     exec sxiv "$1" ;;
   *.mp4|*.mkv|*.avi)
-    exec mpv --keep-open "$1" ;;
+    exec mpv "$1" ;;
   *)
     echo "$1" | xclip
     echo "$1" | xclip -sel cli

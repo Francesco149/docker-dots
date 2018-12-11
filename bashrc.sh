@@ -3,7 +3,7 @@
 export VISUAL=vim
 export EDITOR=$VISUAL
 export TERMINAL=uxterm
-export BROWSER=qutebrowser
+export BROWSER=url-open
 export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
 export ADB_HOST=adbd
