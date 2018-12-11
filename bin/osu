@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export WINEARCH=win32
+export WINEPREFIX="$HOME/quotafix/osu-wine"
+export vblank_mode=0
+
+wineserver -k
+
+for a in "$@"; do
+  if [ "$a" = "kill" ]; then
+    exit 0
+  fi
+done
+
+olddir="$(pwd)"
+cd "$HOME/quotafix/osu/" || exit
+wine './osu!.exe'
+cd "$olddir" || exit
