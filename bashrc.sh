@@ -183,3 +183,13 @@ tgrep() {
     -exec grep -H "$1" {} \; |
   sort -n | awk '{ $1=""; print $0 }'
 }
+
+xf() {
+  xbps-query -Ro "*/$1"
+}
+
+fbss() {
+  dumpfile="$(autoname ~/pics/ss _fb.dump)"
+  cp /dev/fb0 "$dumpfile" &&
+  fbgrab -w 1920 -h 1080 -b 32 -f "$dumpfile" "$(autoname ~/pics/ss _fb.png)"
+}
