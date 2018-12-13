@@ -9,6 +9,8 @@ case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
     exec sxiv "$1" ;;
   *.mp4|*.mkv|*.avi)
     exec mpv "$1" ;;
+  *.osz)
+    exec osu "$1" ;;
   *)
     echo "$1" | xclip
     echo "$1" | xclip -sel cli
