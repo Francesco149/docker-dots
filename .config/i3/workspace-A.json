@@ -1,0 +1,49 @@
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 868,
+               "width": 851,
+               "x": 92,
+               "y": 92
+            },
+            "name": "Telegram (25)",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^TelegramDesktop$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 532,
+       "width": 964,
+       "x": 0,
+       "y": 0
+    },
+    "name": "uxterm",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^term\\-htop$"
+       }
+    ],
+    "type": "con"
+}
+
