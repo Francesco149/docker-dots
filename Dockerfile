@@ -54,6 +54,7 @@ RUN xbps-install -Sy bdftopcf
 RUN xbps-install -Sy ffmpeg
 RUN pip install streamlink youtube_dl
 RUN xbps-install -Sy xtools
+RUN xbps-install -Sy busybox
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
