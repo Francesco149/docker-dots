@@ -49,3 +49,5 @@ command! NoColumns call NoColumns()
 command! NoTabs call NoTabs()
 command! Tabs call Tabs()
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+au BufRead,BufNewFile,Bufenter *.ms set syntax=groff
