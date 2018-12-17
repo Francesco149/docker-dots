@@ -5,6 +5,7 @@ case "$1" in
     mpv "$1" || qutebrowser "$1" ;;
   https://www.youtube.com/*|https://youtube.com/*|https://youtu.be/*|\
   https://streamable.com/*|https://twitch.tv/*|https://*.twitch.tv/*)
+    streamlink "$1" 720p ||
     streamlink "$1" 1080p ||
     streamlink "$1" best ||
     qutebrowser "$1" ;;
