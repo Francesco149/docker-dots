@@ -38,8 +38,8 @@ _tmuxinit() {
 
   tmux new-window
   tmux rename-window shigebot
-  tmux send-keys 'cd ~/src/disabled-shigebot' C-m
-  tmux send-keys './shigebot' C-m
+  tmux send-keys 'cd ~/src/shigebot.sh' C-m
+  tmux send-keys './shigebot.sh' C-m
 
   tmux new-window
   tmux rename-window code
