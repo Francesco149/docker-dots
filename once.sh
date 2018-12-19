@@ -15,7 +15,6 @@ docker run --rm \
   --link adbd:adbd \
   --volume "/$name":/home/loli \
   --volume "/$name/toolchains/fsl-imx-fb":/opt/fsl-imx-fb \
-  --device /dev/ttyACM1 \
   --name $name \
   --hostname $name \
   --publish 22:22 \
