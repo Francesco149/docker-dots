@@ -4,6 +4,7 @@ colorscheme desert
 hi LineNr ctermfg=darkgrey
 set hlsearch
 
+set clipboard=unnamedplus
 set shiftwidth=2
 set smarttab
 set tabstop=2
