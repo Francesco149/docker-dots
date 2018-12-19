@@ -20,6 +20,8 @@ _tmuxinit() {
     return $?
   fi
 
+  # required because i create the tmux session before I even ssh
+  export DISPLAY="memevault:10.0"
   cd ~
 
   tmux new-session -d
