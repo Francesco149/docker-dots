@@ -20,6 +20,8 @@ _tmuxinit() {
     return $?
   fi
 
+  cd ~
+
   tmux new-session -d
   tmux rename-window grind
   tmux send-keys 'cd ~/grind/itl-linux-fw' C-m
