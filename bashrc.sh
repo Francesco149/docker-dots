@@ -41,11 +41,6 @@ _tmuxinit() {
   tmux select-pane -l
 
   tmux new-window
-  tmux rename-window shigebot
-  tmux send-keys 'cd ~/src/shigebot.sh' C-m
-  tmux send-keys './shigebot.sh' C-m
-
-  tmux new-window
   tmux rename-window code
   tmux send-keys 'cd ~/src' C-m
   tmux split-window -h
