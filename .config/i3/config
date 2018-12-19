@@ -58,7 +58,7 @@ exec --no-startup-id \
   i3-sensible-terminal -class "term-htop" -e 'htop;$SHELL'
 exec --no-startup-id \
   i3-sensible-terminal -class "term-ssh" \
-    -e 'ssh 192.168.1.2 -t "tmux a; bash"'
+    -e 'ssh -Y 192.168.1.2 -t "tmux a; bash"'
 exec --no-startup-id \
   mpv --scale=nearest --wid=0 --loop ~/pics/wallpaper_pixel_dark_16_9.mp4
 exec --no-startup-id i3-sensible-terminal -class "term-scratch"

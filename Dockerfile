@@ -55,6 +55,11 @@ RUN xbps-install -Sy ffmpeg
 RUN pip install streamlink youtube_dl
 RUN xbps-install -Sy xtools
 RUN xbps-install -Sy busybox
+RUN echo "X11Forwarding yes" >> /etc/ssh/sshd_config
+RUN xbps-install -Sy xclip
+RUN xbps-install -Sy xauth
+RUN echo "X11DisplayOffset 10" >> /etc/ssh/sshd_config
+RUN echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
