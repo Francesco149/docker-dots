@@ -1,0 +1,19 @@
+#if WIDTH >= 1920
+#define MAINFONT -gohu-2xgohufont-medium-r-normal--22-160-100-100-c-120-iso8859-1
+#define MAINFONT_XFT gohufont-8
+#else
+#define MAINFONT -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#define MAINFONT_XFT gohufont
+#endif
+mainFont: MAINFONT
+mainFontXft: MAINFONT_XFT
+xterm*font: MAINFONT
+xterm*boldFont: MAINFONT
+xterm*allowBoldFonts: false
+xterm*foreground: grey
+xterm*background: black
+xterm*termName: xterm-256color
+xterm*VT100.Translations: #override \
+  Shift <Key>Insert: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
