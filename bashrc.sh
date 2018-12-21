@@ -193,3 +193,5 @@ fbss() {
   cp /dev/fb0 "$dumpfile" &&
   fbgrab -w 1920 -h 1080 -b 32 -f "$dumpfile" "$(autoname ~/pics/ss _fb.png)"
 }
+
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
