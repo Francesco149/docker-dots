@@ -62,6 +62,8 @@ RUN echo "X11DisplayOffset 10" >> /etc/ssh/sshd_config
 RUN echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 RUN xbps-remove -Ry vim
 RUN xbps-install -Sy vim-x11
+RUN xbps-install -Sy cloc
+RUN xbps-install -Sy imlib2-devel
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
