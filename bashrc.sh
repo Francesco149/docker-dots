@@ -9,6 +9,8 @@ export TZ="$TIMEZONE"
 export ADB_HOST=adbd
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export DOTNET_ROOT="$HOME/dotnet"
+export PATH="$PATH:$HOME/dotnet"
 
 _tmuxinit() {
   if tmux attach; then

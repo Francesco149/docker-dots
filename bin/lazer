@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/3src/osu/osu.Game.Tests/bin/Debug/netcoreapp2.2"
+cd ~/3src/osu
+dotnet run --project osu.Desktop -C Release "$@"
