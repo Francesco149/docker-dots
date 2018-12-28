@@ -23,6 +23,7 @@ for_window [class="term-htop"] move workspace $ws10
 for_window [class="term-ssh"] move workspace $ws2
 for_window [class="term-ssh"] fullscreen
 for_window [class="mpv"] floating enable
+for_window [class="spacefm"] floating enable
 for_window [instance="osu!.exe"] \
   floating enable, \
   move position 353 0
