@@ -12,6 +12,10 @@ export PATH="$PATH:$HOME/.local/bin"
 export DOTNET_ROOT="$HOME/dotnet"
 export PATH="$PATH:$HOME/dotnet"
 
+# temporary TODO make packages for these
+export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
+export PATH="$PATH:/home/loli/src/bdf2x/bin"
+
 _tmuxinit() {
   if tmux attach; then
     return $?
