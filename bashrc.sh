@@ -66,6 +66,9 @@ case $- in
   *) return ;;
 esac
 
+stty stop undef
+stty start undef
+
 export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
 alias startx='exec startx'
