@@ -22,3 +22,4 @@ ratio.enable=
 ratio.min.set=0
 ratio.max.set=1
 ratio.upload.set=1b
+throttle.global_down.max_rate.set = 500
