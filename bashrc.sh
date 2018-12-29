@@ -17,17 +17,20 @@ export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 
 _tmuxinit() {
-  if tmux attach; then
-    return $?
-  fi
-
   if [ "$(whoami)" != "loli" ] || [ ! -f /.dockerenv ] ; then
-    tmux
+    tmux attach || tmux
     return $?
   fi
 
-  # required because i create the tmux session before I even ssh
-  export DISPLAY="memevault:10.0"
+  ps -f -u $USER | grep -q '[x]pra' || xpra start :9
+  xpra attach :9 --opengl=no > /tmp/xpra-attach.log 2>&1 &
+  export DISPLAY=:9
+
+  if tmux attach; then
+    xpra detach :9
+    return $?
+  fi
+
   cd ~
 
   tmux new-session -d
@@ -53,6 +56,7 @@ _tmuxinit() {
   tmux send-keys 'cd ~/src' C-m
 
   tmux attach
+  xpra detach :9
 }
 
 # -------------------------------------------------------------------------
