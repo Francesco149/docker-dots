@@ -5,6 +5,13 @@ case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
     exec url-open "$1" ;;
   tg://*)
     exec Telegram -- "$1" ;;
+  magnet:?xt=urn:btih:*)
+    magnethash=$(echo "$1" | awk -F '[:&]' '{ print $4 }')
+    prefix=$(awk -F'[_ ,]' '/schedule2 = watch_directory_/ { print $5 }' \
+      ~/.rtorrent.rc | dmenu -p 'torrent prefix:') || exit
+    echo "d10:magnet-uri${#1}:${1}e" \
+      >"/home/loli/inbox/${prefix}_meta-$magnethash.torrent"
+    ;;
   *.jpeg|*.jpg|*.png|*.bmp|*.gif|*.tga|*.ppm|*.dds|*.webp)
     exec sxiv "$1" ;;
   *.mp4|*.mkv|*.avi)

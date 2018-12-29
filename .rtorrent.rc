@@ -1,0 +1,24 @@
+dht = on
+dht_port = 6881
+session = ~/.session
+directory = ~/inbox
+schedule2 = watch_directory_inbox, 10, 7, \
+  "load.start_verbose=~/inbox/*.torrent,d.directory.set=~/inbox/"
+schedule2 = watch_directory_animu, 11, 7, \
+  "load.start_verbose=~/inbox/animu_*.torrent,d.directory.set=~/animu/"
+schedule2 = watch_directory_hentai, 12, 7, \
+  "load.start_verbose=~/inbox/hentai_*.torrent,d.directory.set=~/animu/h/"
+schedule2 = watch_directory_mango, 13, 8, \
+  "load.start_verbose=~/inbox/mango_*.torrent,d.directory.set=~/mango/"
+schedule2 = watch_directory_doujin, 14, 7, \
+  "load.start_verbose=~/inbox/doujin_*.torrent,d.directory.set=~/mango/h/"
+schedule2 = watch_directory_hoard, 15, 7, \
+  "load.start_verbose=~/inbox/hoard_*.torrent,d.directory.set=~/hoard/"
+schedule = untied_directory,16,7,stop_untied=
+protocol.pex.set = yes
+trackers.disable = yes
+throttle.max_downloads.global.set = 2
+ratio.enable=
+ratio.min.set=0
+ratio.max.set=1
+ratio.upload.set=1b

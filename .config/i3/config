@@ -22,6 +22,7 @@ for_window [class="Telegram"] move workspace $ws10
 for_window [class="term-htop"] move workspace $ws10
 for_window [class="term-ssh"] move workspace $ws2
 for_window [class="term-ssh"] fullscreen
+for_window [class="term-rtorrent"] move workspace $ws9
 for_window [class="mpv"] floating enable
 for_window [class="spacefm"] floating enable
 for_window [instance="osu!.exe"] \
@@ -70,6 +71,9 @@ exec --no-startup-id \
 exec --no-startup-id \
   i3-sensible-terminal -class "term-ssh" \
     -e 'ssh -i /mnt/memevault/.ssh/id_rsa -Y 192.168.1.2 -t "tmux a; bash"'
+exec --no-startup-id \
+  i3-sensible-terminal -class "term-rtorrent" \
+    -e 'ssh -i /mnt/memevault/.ssh/id_rsa -p 23 -Y 192.168.1.2 -t "tmux a; bash"'
 exec --no-startup-id \
   mpv --scale=nearest --wid=0 --loop ~/pics/wallpaper_pixel_dark_16_9.mp4
 exec --no-startup-id i3-sensible-terminal -class "term-scratch"
