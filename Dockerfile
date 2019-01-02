@@ -66,7 +66,7 @@ RUN xbps-install -Sy cloc
 RUN xbps-install -Sy imlib2-devel
 RUN xbps-install -Syuv && \
   rm -rf /usr/lib/python2.7/site-packages/pycparser && \
-  xbps-install -Sy xpra procps-ng && mkdir /run/user/1000/xpra && \
+  xbps-install -Sy xpra procps-ng && mkdir -p /run/user/1000/xpra && \
   chown -R 1000:1000 /run/user/1000
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
