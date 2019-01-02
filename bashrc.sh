@@ -74,6 +74,7 @@ export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
 alias startx='exec startx'
 alias ls='ls --color=auto'
 alias t='_tmuxinit'
+alias xo='xdg-open'
 alias xi='sudo xbps-install'
 alias xu='sudo xbps-install -Suv'
 alias xr='sudo xbps-remove -R'
