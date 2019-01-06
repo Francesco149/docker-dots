@@ -25,7 +25,7 @@ pcm.dsnooper {
   slave.pcm "hw:PCH"
   slave {
     period_size 32
-    buffer_size 1024
+    buffer_size 2048
     rate 48000
   }
 }
