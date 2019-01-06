@@ -47,7 +47,7 @@ case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
   *.osz)
     exec osu "$1" ;;
   *.pdf)
-    exec zathura "$1" ;;
+    exec $prefix zathura "$1" ;;
   *)
     echo "$1" | xclip
     echo "$1" | xclip -sel cli
