@@ -182,6 +182,8 @@ ucast() {
 # shellcheck disable=SC1004
 alias fcast='CAST_VF="scale=960:540:flags=neighbor" \
   cast -s 1920x1080 -i ${DISPLAY}+0,0'
+alias afucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0 -f alsa -i dsnooper'
+alias lfucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0 -f alsa -i loopout'
 alias fucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0'
 alias scast='cast $(ffrectsel)'
 alias sucast='ucast $(ffrectsel)'
