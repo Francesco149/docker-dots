@@ -68,6 +68,7 @@ esac
 
 stty stop undef
 stty start undef
+shopt -s checkwinsize
 
 export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
