@@ -218,4 +218,4 @@ fbss() {
 }
 
 [ "$(tty)" = "/dev/tty1" ] && [ "$(whoami)" = "loli" ] &&
-  ! pgrep -x Xorg >/dev/null && exec startx
+  which startx >/dev/null 2>&1 && ! pgrep -x Xorg >/dev/null && exec startx
