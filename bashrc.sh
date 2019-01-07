@@ -82,6 +82,12 @@ alias xr='sudo xbps-remove -R'
 alias xq='xbps-query -Rs'
 alias xl='xbps-query -l'
 alias xff='xbps-query -Ro'
+alias pi='sudo pacman -S'
+alias pu='sudo pacman -Syuuu && pacman -Fy'
+alias pr='sudo pacman -Rs'
+alias pq='pacman -Ss'
+alias pl='pacman -Qqe'
+alias pf='pacman -Fs'
 alias e='echo $?'
 
 if [ "$(id -u)" -eq 0 ] ; then
