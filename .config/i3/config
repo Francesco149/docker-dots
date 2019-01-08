@@ -68,7 +68,7 @@ bindsym $mod+bracketright \
   move position 0 $chatterino_closed_y, \
   focus tiling
 
-exec --no-startup-id qutebrowser
+exec --no-startup-id url-open
 exec --no-startup-id chatterino
 exec --no-startup-id Telegram
 exec --no-startup-id \
