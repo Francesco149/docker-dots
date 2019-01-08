@@ -16,14 +16,20 @@ pcm.!default {
 
 ctl.!default {
   type hw
-  card PCH
-  card Intel
+  card {
+    @func getenv
+    vars [ ALSA_DEVICE ]
+    default "PCH"
+  }
 }
 
 pcm.sndcard {
   type hw
-  card PCH
-  card Intel
+  card {
+    @func getenv
+    vars [ ALSA_DEVICE ]
+    default "PCH"
+  }
 }
 
 pcm.dsnooper {

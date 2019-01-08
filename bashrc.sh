@@ -16,6 +16,12 @@ export PATH="$PATH:$HOME/dotnet"
 export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 
+if aplay -l | grep -q Intel; then
+  export ALSA_DEVICE="Intel"
+else
+  export ALSA_DEVICE="PCH"
+fi
+
 for b in qutebrowser icecat firefox; do
   if command -v "$b" >/dev/null 2>&1; then
     export ACTUAL_BROWSER="$b"
