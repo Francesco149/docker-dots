@@ -214,7 +214,7 @@ halfscreenres() {
 }
 
 screencoords() {
-  xrandr 2>&1 | awk -F '[ +]' '/primary/ { print $5,$6 }'
+  xrandr 2>&1 | awk -F '[ +]' '/primary/ { printf "%s,%s\n",$5,$6 }'
 }
 
 alias fcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0'
