@@ -10,11 +10,14 @@ xsudo() {
 }
 
 x11lock() {
-  scr=$(xsudo mktemp -d)
-  xsudo scrot "$scr/lock.png"
-  xsudo convert "$scr/lock.png" -blur 10x10 "/tmp/blur_lock.png"
-  rm -rf "$scr"
-  xsudo i3lock -i "/tmp/blur_lock.png" -f
+  xsudo sh -c '
+    scr=$(mktemp -d)
+    scrot "$scr/lock.png"
+    convert -scale 50% -blur 0x3 -resize 200% \
+      "$scr/lock.png" "/tmp/blur_lock.png"
+    rm -rf "$scr"
+    i3lock -i "/tmp/blur_lock.png" -f
+  '
 }
 
 lock_and_sleep() {
