@@ -4,8 +4,8 @@ case "$1" in
   *.mp4|*.avi|*.mkv|*.jpg|*.gif|*.png|\
   https://www.youtube.com/*|https://youtube.com/*|https://youtu.be/*|\
   https://streamable.com/*)
-    mpv "$1" || qutebrowser "$1" ;;
+    mpv "$1" || $ACTUAL_BROWSER "$1" ;;
   https://twitch.tv/*|https://*.twitch.tv/*)
-    streamlink "$1" best || qutebrowser "$1" ;;
-  *) qutebrowser "$1" ;;
+    streamlink "$1" best || $ACTUAL_BROWSER "$1" ;;
+  *) $ACTUAL_BROWSER "$1" ;;
 esac
