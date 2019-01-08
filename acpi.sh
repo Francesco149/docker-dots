@@ -1,13 +1,20 @@
 #!/bin/sh
 # at the moment this is only used by my thinkpad x200
 
-x11lock() {
+xsudo() {
   xuser=$(ps aux | awk '/xinit/ { print $1; exit }')
   display=$(ps -a -x -o '%c %a' |
     awk -F ':' '/[x]init/ { print $2 }' |
     awk '{ print $1 }')
-  sudo -u $xuser /usr/bin/env DISPLAY=":$display" \
-    /usr/bin/i3lock -i /home/$xuser/lock.png -f
+  sudo -u "$xuser" env DISPLAY=":$display" "$@"
+}
+
+x11lock() {
+  scr=$(xsudo mktemp -d)
+  xsudo scrot "$scr/lock.png"
+  xsudo convert "$scr/lock.png" -blur 10x10 "/tmp/blur_lock.png"
+  rm -rf "$scr"
+  xsudo i3lock -i "/tmp/blur_lock.png" -f
 }
 
 lock_and_sleep() {
