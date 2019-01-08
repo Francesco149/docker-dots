@@ -2,6 +2,8 @@ note: this repository also doubles as my dotfiles for client machines,
 which means it includes configs for graphical stuff that aren't used
 by the docker container itself
 
+credits to @lukesmithxyz for the ```.emoji``` file
+
 I've been experimenting with using a Dockerfile as a whole system
 config for a headless environment that I ssh into for daily non-graphical
 workflow like coding, building and deploying stuff, managing files,
