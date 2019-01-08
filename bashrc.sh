@@ -202,12 +202,30 @@ ucast() {
     "$(autoname).mp4"
 }
 
-# shellcheck disable=SC1004
-alias fcast='CAST_VF="scale=960:540:flags=neighbor" \
-  cast -s 1920x1080 -i ${DISPLAY}+0,0'
-alias afucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0 -f alsa -i dsnooper'
-alias lfucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0 -f alsa -i loopout'
-alias fucast='ucast -s 1920x1080 -i ${DISPLAY}+0,0'
+screenres() {
+  xrandr 2>&1 | awk -F '[ +]' '/primary/ { print $4 }'
+}
+
+halfscreenres() {
+  size=$(screenres)
+  w=$(echo "$size" | awk -Fx '{ print $1 }')
+  h=$(echo "$size" | awk -Fx '{ print $2 }')
+  echo "$(( w / 2 )):$(( h / 2 ))"
+}
+
+screencoords() {
+  xrandr 2>&1 | awk -F '[ +]' '/primary/ { print $5,$6 }'
+}
+
+alias fcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0'
+alias afcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0 -f alsa -i dsnooper'
+alias lfcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0 -f alsa -i loopout'
+alias frcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
+alias afrcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i dsnooper'
+alias lfrcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i loopout'
+alias afucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i dsnooper'
+alias lfucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i loopout'
+alias fucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
 alias scast='cast $(ffrectsel)'
 alias sucast='ucast $(ffrectsel)'
 
