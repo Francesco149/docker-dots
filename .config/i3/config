@@ -79,8 +79,7 @@ exec --no-startup-id \
 exec --no-startup-id \
   i3-sensible-terminal -class "term-rtorrent" \
     -e 'ssh -p 23 -Y 192.168.1.2 -t "tmux a; bash"'
-exec --no-startup-id \
-  mpv --scale=nearest --wid=0 --loop ~/wallpaper.mp4
+exec --no-startup-id wallpaper
 exec --no-startup-id i3-sensible-terminal -class "term-scratch"
 
 font "pango:$main_font_pango"

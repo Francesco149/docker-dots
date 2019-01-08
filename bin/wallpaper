@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ ! -f ~/.staticwall ]; then
+  mpv --scale=nearest --wid=0 --loop ~/wallpaper.mp4
+else
+  feh --bg-scale ~/wallpaper.png
+fi
