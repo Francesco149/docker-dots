@@ -170,7 +170,8 @@ bindsym $mod+r mode "resize"
 
 bar {
   i3bar_command i3bar
-  #status_command i3blocks
+  status_command i3blocks
+  #status_command i3status
   mode hide
 
   colors {
