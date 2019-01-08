@@ -16,6 +16,12 @@ export PATH="$PATH:$HOME/dotnet"
 export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 
+for b in qutebrowser icecat firefox; do
+  if command -v "$b" >/dev/null 2>&1; then
+    export ACTUAL_BROWSER="$b"
+  fi
+done
+
 _tmuxinit() {
   if [ "$(whoami)" != "loli" ] || [ ! -f /.dockerenv ] ; then
     tmux attach || tmux
