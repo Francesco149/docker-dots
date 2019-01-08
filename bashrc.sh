@@ -34,7 +34,8 @@ _tmuxinit() {
     return $?
   fi
 
-  ps -f -u $USER | grep -q '[x]pra' || xpra start :9
+  # shellcheck disable=SC2009
+  ps -f -u "$USER" | grep -q '[x]pra' || xpra start :9
   xpra attach :9 --opengl=no > /tmp/xpra-attach.log 2>&1 &
   export DISPLAY=:9
 
@@ -43,7 +44,7 @@ _tmuxinit() {
     return $?
   fi
 
-  cd ~
+  cd || return $?
 
   tmux new-session -d
   tmux rename-window grind
@@ -80,7 +81,11 @@ esac
 
 stty stop undef
 stty start undef
-shopt -s checkwinsize
+case "$0" in
+bash)
+  # shellcheck disable=SC2039
+  shopt -s checkwinsize ;;
+esac
 
 export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
@@ -230,4 +235,4 @@ fbss() {
 }
 
 [ "$(tty)" = "/dev/tty1" ] && [ "$(whoami)" = "loli" ] &&
-  which startx >/dev/null 2>&1 && ! pgrep -x Xorg >/dev/null && exec startx
+  ! pgrep -x Xorg >/dev/null && exec startx
