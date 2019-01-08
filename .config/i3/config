@@ -19,6 +19,9 @@ set $ws10 "A"
 exec --no-startup-id \
   "i3-msg 'workspace A; append_layout ~/.config/i3/workspace-A.json'"
 for_window [class="qutebrowser"] move workspace $ws1
+for_window [class="Icecat"] move workspace $ws1
+for_window [class="IceCat"] move workspace $ws1
+for_window [class="Firefox"] move workspace $ws1
 for_window [class="Telegram"] move workspace $ws10
 for_window [class="term-htop"] move workspace $ws10
 for_window [class="term-ssh"] move workspace $ws2
