@@ -153,6 +153,15 @@ mode "resize" {
   bindsym $mod+r mode "default"
 }
 
+mode "moveit" {
+    bindsym h move left 20px
+    bindsym l move right 20px
+    bindsym k move up 20px
+    bindsym j move down 20px
+    bindsym $mod+Tab mode "default"
+}
+bindsym $mod+Tab focus floating; mode "moveit"
+
 gaps outer 60
 gaps inner 30
 
