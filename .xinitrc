@@ -8,4 +8,5 @@ xset r rate 200 60
 xset s off -dpms
 xinput set-button-map "HUION 420 Pen Pen (0)" 1 0 0 0 0 0 0
 rm -f ~/.local/share/chatterino/Misc/running_*
+setxkbmap -option caps:swapescape
 exec i3
