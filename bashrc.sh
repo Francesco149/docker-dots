@@ -2,7 +2,11 @@
 
 export VISUAL=vim
 export EDITOR=$VISUAL
-export TERMINAL=uxterm
+if [ -f ~/.term ]; then
+  export TERMINAL=$(cat ~/.term)
+else
+  export TERMINAL=uxterm
+fi
 export BROWSER=url-open
 export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
