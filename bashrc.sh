@@ -20,10 +20,10 @@ export PATH="$PATH:$HOME/dotnet"
 export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 
-if aplay -l | grep -q Intel; then
-  export ALSA_DEVICE="Intel"
-else
+if aplay -l | grep -q PCH; then
   export ALSA_DEVICE="PCH"
+else
+  export ALSA_DEVICE="Intel"
 fi
 
 for b in qutebrowser icecat firefox; do
