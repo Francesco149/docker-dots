@@ -82,7 +82,7 @@ exec --no-startup-id \
 exec --no-startup-id wallpaper
 exec --no-startup-id i3-sensible-terminal -class "term-scratch"
 
-font "pango:$main_font_pango"
+font "$main_font_pango"
 bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
 
 default_border pixel

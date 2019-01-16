@@ -1,11 +1,12 @@
-#define MAINFONT_PANGO Gohu GohuFont
 #if WIDTH >= 1920
 #define MAINFONT -gohu-2xgohufont-medium-r-normal--22-160-100-100-c-120-iso8859-1
-#define MAINFONT_XFT Gohu GohuFont-22
+#define MAINFONT_XFT gohufont-8
+#define MAINFONT_PANGO -gohu-2xgohufont-medium-r-normal--22-160-100-100-c-120-iso8859-1
 #else
 !#define MAINFONT -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
 #define MAINFONT -gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
 #define MAINFONT_XFT Gohu GohuFont-11
+#define MAINFONT_PANGO pango:Gohu GohuFont
 #endif
 mainFont: MAINFONT
 mainFontXft: MAINFONT_XFT
