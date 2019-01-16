@@ -24,6 +24,7 @@ config.set("url.searchengines", {
   "y": "https://www.youtube.com/results?search_query={}",
   "f": "https://www.facebook.com/{}",
   "gh": "https://github.com/{}",
+  "gq": "https://github.com/search?q={}",
   "nyaa": "https://nyaa.si/?f=0&c=0_0&q={}",
   "fap": "https://sukebei.nyaa.si/?f=0&c=0_0&q={}",
   "mal": "https://myanimelist.net/search/all?q={}",
