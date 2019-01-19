@@ -17,7 +17,7 @@ mainFont: MAINFONT
 mainFontXft: MAINFONT_NAME MAINFONT_SIZE
 mainFontPango: pango:MAINFONT_NAME:pixelsize=MAINFONT_SIZE
 xterm*font: MAINFONT
-st*font: MAINFONT
+st*font: MAINFONT MAINFONT_SIZE
 xterm*boldFont: MAINFONT
 xterm*allowBoldFonts: false
 xterm*foreground: grey
