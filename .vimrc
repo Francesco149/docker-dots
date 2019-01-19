@@ -30,7 +30,7 @@ endfunction
 
 function Columns(n)
     set textwidth=0
-    let &colorcolumn=join(range(a:n + 1,200),",")
+    let &colorcolumn=join(range(a:n + 1,a:n + 200),",")
     highlight ColorColumn ctermbg=8
 endfunction
 
@@ -52,3 +52,6 @@ command! Tabs call Tabs()
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 au BufRead,BufNewFile,Bufenter *.ms set syntax=groff
+au BufRead,BufNewFile,Bufenter *.vs set syntax=c
+au BufRead,BufNewFile,Bufenter *.fs set syntax=c
+au BufRead,BufNewFile,Bufenter *.glsl set syntax=c
