@@ -15,6 +15,7 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export DOTNET_ROOT="$HOME/dotnet"
 export PATH="$PATH:$HOME/dotnet"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # temporary TODO make packages for these
 export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
