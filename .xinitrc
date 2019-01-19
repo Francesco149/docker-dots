@@ -10,4 +10,5 @@ xinput set-button-map "HUION 420 Pen Pen (0)" 1 0 0 0 0 0 0
 rm -f ~/.local/share/chatterino/Misc/running_*
 setxkbmap -option caps:swapescape
 parcellite &
+amixer set Speaker mute nocap
 exec i3
