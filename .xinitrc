@@ -11,4 +11,7 @@ rm -f ~/.local/share/chatterino/Misc/running_*
 setxkbmap -option caps:swapescape
 parcellite &
 amixer set Speaker mute nocap
+if xrandr | grep -q DVI-I-1; then
+  xrandr --output DVI-I-1 --primary
+fi
 exec i3
