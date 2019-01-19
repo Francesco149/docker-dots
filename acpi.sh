@@ -18,6 +18,7 @@ x11lock() {
     rm -rf "$scr"
     i3lock -i "/tmp/blur_lock.png" -f
   '
+  sleep 0.5
 }
 
 lock_and_sleep() {
