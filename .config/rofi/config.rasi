@@ -31,7 +31,6 @@
     alternate-active-foreground: @blue;
     active-background:           @background;
     selected-active-background:  @blue;
-    font: "Gohu GohuFont 11";
 }
 window {
     background-color: @background;
@@ -60,7 +59,6 @@ listview {
 }
 element {
     border:  0;
-    padding: 6px ;
 }
 element normal.normal {
     background-color: @normal-background;
