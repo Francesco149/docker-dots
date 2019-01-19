@@ -7,6 +7,7 @@ if [ -f ~/.term ]; then
   export TERM=xterm-256color
 else
   export TERMINAL=aterm
+  export TERM=xterm-16color
 fi
 export BROWSER=url-open
 export TIMEZONE="Europe/Rome"
