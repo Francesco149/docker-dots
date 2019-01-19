@@ -30,6 +30,7 @@ fi
 for b in qutebrowser icecat firefox; do
   if command -v "$b" >/dev/null 2>&1; then
     export ACTUAL_BROWSER="$b"
+    break
   fi
 done
 
@@ -37,6 +38,7 @@ if [ -z ACTUAL_BROWSER ] && command -v apulse >/dev/null 2>&1; then
   for b in icecat firefox; do
     if command -v "$b" >/dev/null 2>&1; then
       export ACTUAL_BROWSER="apulse $b"
+      break
     fi
   done
 fi
