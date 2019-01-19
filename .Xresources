@@ -23,6 +23,7 @@ aterm*borderLess: false
 aterm*borderWidth: 0
 aterm*transparent: true
 aterm*color12: royalblue
+aterm*foreground: grey
 mainFont: MAINFONT
 mainFontXft: MAINFONT_NAME-MAINFONT_SIZE_PT
 mainFontPango: pango:MAINFONT_NAME MAINFONT_SIZE_PT
