@@ -92,7 +92,7 @@ exec --no-startup-id \
   i3-sensible-terminal -fn $main_font -fb $main_font \
     +tr -title "term-scratch"
 
-font "$main_font_pango"
+font "$main_font"
 bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
 
 default_border pixel
