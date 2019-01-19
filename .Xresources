@@ -4,16 +4,18 @@
 #define MAINFONT_NAME gohufont
 #define MAINFONT_SIZE 8
 !broken font matching, its not actually size 8
+#define MAINFONT_SIZE_PT 16
 #else
 !#define MAINFONT -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
 !#define MAINFONT -gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
 #define MAINFONT -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
 #define MAINFONT_NAME xos4 Terminus
 #define MAINFONT_SIZE 12
+#define MAINFONT_SIZE_PT 9
 #endif
 mainFont: MAINFONT
-mainFontXft: MAINFONT_NAME-MAINFONT_SIZE
-mainFontPango: pango:MAINFONT_NAME:pixelsize=MAINFONT_SIZE
+mainFontXft: MAINFONT_NAME-MAINFONT_SIZE_PT
+mainFontPango: pango:MAINFONT_NAME MAINFONT_SIZE_PT
 xterm*font: MAINFONT
 st*font: MAINFONT MAINFONT_SIZE
 xterm*boldFont: MAINFONT

@@ -34,6 +34,7 @@ for_window [class="term-rtorrent"] move workspace $ws9
 for_window [class="mpv"] floating enable
 for_window [instance="mpv_tiled"] floating disable
 for_window [class="spacefm"] floating enable
+for_window [class="xgarbage"] floating enable
 for_window [instance="osu!.exe"] \
   floating enable, \
   move position 353 0
