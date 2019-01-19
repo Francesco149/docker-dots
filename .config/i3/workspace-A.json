@@ -37,11 +37,11 @@
        "x": 0,
        "y": 0
     },
-    "name": "uxterm",
+    "name": "aterm",
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^term\\-htop$"
+        "title": "^term\\-htop$"
        }
     ],
     "type": "con"

@@ -27,10 +27,10 @@ for_window [title="Save As"] floating enable, resize set 50 ppt 50 ppt
 for_window [title="Terminal settings"] floating enable, resize set 50 ppt 50 ppt
 for_window [class="Firefox"] move workspace $ws1
 for_window [class="Telegram"] move workspace $ws10
-for_window [class="term-htop"] move workspace $ws10
-for_window [class="term-ssh"] move workspace $ws2
-for_window [class="term-ssh"] fullscreen
-for_window [class="term-rtorrent"] move workspace $ws9
+#for_window [title="term-htop"] move workspace $ws10
+for_window [title="term-ssh"] move workspace $ws2
+#for_window [title="term-ssh"] fullscreen
+for_window [title="term-rtorrent"] move workspace $ws9
 for_window [class="mpv"] floating enable
 for_window [instance="mpv_tiled"] floating disable
 for_window [class="spacefm"] floating enable
@@ -43,13 +43,13 @@ for_window [title="osu!lazer"] \
   resize set 1280 1024, \
   move position 353 0
 
-for_window [class="term-scratch"] \
+for_window [title="term-scratch"] \
   floating enable, \
   resize set 50 ppt 50 ppt, \
   move scratchpad
 
 bindsym $mod+grave \
-  [class="term-scratch"] \
+  [title="term-scratch"] \
   scratchpad show, \
   move position center
 
@@ -77,15 +77,20 @@ exec --no-startup-id url-open
 exec --no-startup-id chatterino
 exec --no-startup-id Telegram
 exec --no-startup-id \
-  i3-sensible-terminal -class "term-htop" -e 'htop;$SHELL'
+  i3-sensible-terminal -fn $main_font -fb $main_font \
+    -title "term-htop" -e htop
 exec --no-startup-id \
-  i3-sensible-terminal -class "term-ssh" \
-    -e 'ssh -Y 192.168.1.2 -t "tmux a; bash"'
+  i3-sensible-terminal -fn $main_font -fb $main_font \
+    -title "term-ssh" \
+    -e ssh -Y 192.168.1.2 -t "tmux a; bash"
 exec --no-startup-id \
-  i3-sensible-terminal -class "term-rtorrent" \
-    -e 'ssh -p 23 -Y 192.168.1.2 -t "tmux a; bash"'
+  i3-sensible-terminal -fn $main_font -fb $main_font \
+    -title "term-rtorrent" \
+    -e ssh -p 23 -Y 192.168.1.2 -t "tmux a; bash"
 exec --no-startup-id wallpaper
-exec --no-startup-id i3-sensible-terminal -class "term-scratch"
+exec --no-startup-id \
+  i3-sensible-terminal -fn $main_font -fb $main_font \
+    +tr -title "term-scratch"
 
 font "$main_font_pango"
 bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
@@ -93,7 +98,7 @@ bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
 default_border pixel
 default_floating_border pixel
 floating_modifier $mod
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal -fn $main_font -fb $main_font
 bindsym $mod+Shift+q kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down

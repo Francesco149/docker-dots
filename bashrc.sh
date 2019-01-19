@@ -4,8 +4,9 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 if [ -f ~/.term ]; then
   export TERMINAL=$(cat ~/.term)
+  export TERM=xterm-256color
 else
-  export TERMINAL=uxterm
+  export TERMINAL=aterm
 fi
 export BROWSER=url-open
 export TIMEZONE="Europe/Rome"
@@ -102,7 +103,6 @@ bash)
   shopt -s checkwinsize ;;
 esac
 
-export TERM=xterm-256color
 export IMX_SDK_DIR=~/toolchains/fsl-imx-fb
 alias startx='exec startx'
 alias ls='ls --color=auto'

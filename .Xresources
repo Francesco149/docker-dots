@@ -13,6 +13,16 @@
 #define MAINFONT_SIZE 12
 #define MAINFONT_SIZE_PT 9
 #endif
+!for some reason aterm doesnt use the preprocessor
+aterm*font: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+aterm*boldFont: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+aterm*scrollBar: false
+aterm*shading: 10
+aterm*fading: 100
+aterm*borderLess: false
+aterm*borderWidth: 0
+aterm*transparent: true
+aterm*color12: royalblue
 mainFont: MAINFONT
 mainFontXft: MAINFONT_NAME-MAINFONT_SIZE_PT
 mainFontPango: pango:MAINFONT_NAME MAINFONT_SIZE_PT
