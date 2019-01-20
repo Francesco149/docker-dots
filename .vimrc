@@ -38,7 +38,7 @@ function Columns(n)
 endfunction
 
 function NoColumns()
-    highlight ColorColumn ctermbg=0
+    set colorcolumn=0
 endfunction
 
 call NoTabs()
