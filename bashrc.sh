@@ -3,7 +3,8 @@
 export VISUAL=vim
 export EDITOR=$VISUAL
 if [ -f ~/.term ]; then
-  export TERMINAL=$(cat ~/.term)
+  term=$(cat ~/.term)
+  export TERMINAL="$term"
   export TERM=xterm-256color
 else
   export TERMINAL=aterm
