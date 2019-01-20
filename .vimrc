@@ -58,6 +58,8 @@ nnoremap <silent> <F5>
   \ :let @/=_s <Bar>
   \ :nohl <Bar>
   \ :unlet _s <CR>
+map <leader>r :source ~/.vimrc<CR>
+map <leader>h :nohl<CR>
 
 au BufRead,BufNewFile,Bufenter *.ms set syntax=groff
 au BufRead,BufNewFile,Bufenter *.vs set syntax=c
