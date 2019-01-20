@@ -267,6 +267,10 @@ xf() {
   xbps-query -Ro "*/$1"
 }
 
+xls() {
+  xbps-query -p install-date -s '' | awk '{ print $2,$3,$1 }' | sort
+}
+
 fbss() {
   dumpfile="$(autoname ~/pics/ss _fb.dump)"
   cp /dev/fb0 "$dumpfile" &&
