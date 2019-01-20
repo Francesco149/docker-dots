@@ -33,8 +33,8 @@ endfunction
 
 function Columns(n)
     set textwidth=0
-    let &colorcolumn=join(range(a:n + 1,a:n + 200),",")
-    highlight ColorColumn ctermbg=8
+    let &colorcolumn=join(range(a:n + 1,a:n + 1),",")
+    highlight ColorColumn ctermbg=16
 endfunction
 
 function NoColumns()
