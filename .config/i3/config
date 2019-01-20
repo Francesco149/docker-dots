@@ -77,7 +77,7 @@ exec --no-startup-id url-open
 exec --no-startup-id chatterino
 exec --no-startup-id Telegram
 exec --no-startup-id \
-  i3-sensible-terminal -fn $main_font -fb $main_font \
+  sleep 3 && i3-sensible-terminal -fn $main_font -fb $main_font \
     -title "term-htop" -e htop
 exec --no-startup-id \
   i3-sensible-terminal -fn $main_font -fb $main_font \
