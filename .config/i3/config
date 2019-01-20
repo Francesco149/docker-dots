@@ -149,7 +149,7 @@ bindsym Ctrl+Shift+3 exec "sharenix-window"
 bindsym Ctrl+Shift+4 exec "sharenix-section"
 bindsym Ctrl+Shift+5 exec "sharenix -m=c -n -c"
 bindsym $mod+Shift+m exec \
-  "cat ~/.emoji | rofi -dmenu | awk '{ printf $1 }' | xclip -sel cli"
+  cat ~/.emoji | rofi -dmenu | awk '{ printf $1 }' | xclip -sel cli
 
 bindsym $mod+Shift+e exec \
   "i3-nagbar -t warning \
