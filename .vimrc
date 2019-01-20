@@ -15,6 +15,7 @@ set nowrap
 set modeline
 set modelines=5
 set noswapfile
+set t_Co=16
 
 function NoTabs()
     set expandtab
