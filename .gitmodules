@@ -1,0 +1,3 @@
+[submodule ".config/mutt"]
+	path = .config/mutt
+	url = https://github.com/LukeSmithxyz/mutt-wizard
