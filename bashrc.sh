@@ -211,7 +211,7 @@ cast() {
     -f x11grab \
     -thread_queue_size 512 \
     "${@}" \
-    -c:v libx264 -r 60 \
+    -c:v libx264 -r "${CAST_FPS:-60}" \
     -vf "${CAST_VF:-null}" \
     -preset "${CAST_PRESET:-veryfast}" \
     -tune "${CAST_TUNE:-zerolatency}" \
@@ -251,12 +251,14 @@ alias fcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres
 alias afcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0 -f alsa -i dsnooper'
 alias lfcast='CAST_VF="scale=$(halfscreenres):flags=neighbor" cast -s $(screenres) -i ${DISPLAY}+0,0 -f alsa -i loopout'
 alias frcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
+alias frcast120='CAST_FPS=120 cast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
 alias afrcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i dsnooper'
 alias lfrcast='cast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i loopout'
 alias afucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i dsnooper'
 alias lfucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords) -f alsa -i loopout'
 alias fucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
 alias scast='cast $(ffrectsel)'
+alias scast120='CAST_FPS=120 cast $(ffrectsel)'
 alias sucast='ucast $(ffrectsel)'
 
 tgrep() {
