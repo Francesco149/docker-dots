@@ -68,6 +68,20 @@ RUN xbps-install -Syuv && \
   rm -rf /usr/lib/python2.7/site-packages/pycparser && \
   xbps-install -Sy xpra procps-ng && mkdir -p /run/user/1000/xpra && \
   chown -R 1000:1000 /run/user/1000
+RUN xbps-install -Sy megatools
+RUN xbps-install -Sy rxvt-unicode-terminfo
+RUN xbps-install -Sy apache-maven gnupg2
+RUN xbps-install -Sy python3-pip
+RUN xbps-install -Sy swig python-devel python3-devel python-wheel \
+  python2-wheel xkbcommon-devel
+RUN xbps-install -Sy SDL-devel SDL2-devel cmake mysql++-devel lua-devel \
+  crypto++-devel vte-devel vte3-devel python3-M2Crypto python-M2Crypto
+RUN xbps-install -Sy hangups
+RUN xbps-install -Sy gopass dialog neomutt msmtp offlineimap
+RUN xbps-install -Sy clang llvm
+RUN xbps-install -Sy notmuch
+RUN xbps-install -Sy glfw-devel
+RUN xbps-install -Sy pingutils
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
