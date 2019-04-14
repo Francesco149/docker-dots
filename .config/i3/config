@@ -182,24 +182,23 @@ gaps inner 30
 
 bindsym $mod+r mode "resize"
 
-bar {
-  i3bar_command i3bar
-  status_command i3blocks
-  #status_command i3status
-  mode hide
+# TODO: personalize polybar more or go back to i3bar
+exec --no-startup-id polybar example
+#bar {
+#  i3bar_command i3bar -t
+#
+#  colors {
+#    background #00000000
+#    statusline #bebebe
+#    focused_workspace #00000000 #00000000 #ffffff
+#    active_workspace #00000000 #00000000 #ffffff
+#    inactive_workspace #00000000 #00000000 #bebebe
+#  }
+#}
 
-  colors {
-    background #00000000
-    statusline #cccccc
-    focused_workspace #00000000 #00000000 #00ff00
-    active_workspace #00000000 #00000000 #00ff00
-    inactive_workspace #00000000 #00000000 #cccccc
-  }
-}
-
-client.focused #00ff00 #00ff00 #000000 #cccccc #cccccc
-client.focused_inactive #cccccc #00ff00 #000000 #cccccc #222222
-client.unfocused #cccccc #cccccc #888888 #292d2e #222222
-client.urgent #2f343a #900000 #ffffff #900000 #900000
-client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c
-client.background #ffffff
+client.focused #000000 #bebebe #000000 #bebebe #bebebe
+client.focused_inactive #000000 #bebebe #000000ff #333333 #333333
+client.unfocused #000000 #bebebe #000000 #333333 #333333
+client.urgent #2f343a #900000 #121213 #900000 #900000
+client.placeholder #000000 #000000 #bebebe #bebebe #333333
+client.background #000000
