@@ -135,6 +135,7 @@ alias pl='pacman -Qqe'
 alias pf='pacman -Fs'
 alias e='echo $?'
 alias nonascii='grep --color='auto' -P -n "[\x80-\xFF]"'
+alias nano='nano -liE -T2 --softwrap'
 
 if [ "$(id -u)" -eq 0 ] ; then
   PS1=''\
