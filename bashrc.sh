@@ -126,7 +126,7 @@ alias xu='sudo xbps-install -Suv'
 alias xr='sudo xbps-remove -R'
 alias xq='xbps-query -Rs'
 alias xl='xbps-query -l'
-alias xff='xbps-query -Ro'
+alias xf='xlocate'
 alias pi='sudo pacman -S'
 alias pu='sudo pacman -Syuuu && sudo pacman -Fy'
 alias pr='sudo pacman -Rs'
@@ -269,10 +269,6 @@ tgrep() {
     -exec find {} -printf "%T@ " \; \
     -exec grep -H "$1" {} \; |
   sort -n | awk '{ $1=""; print $0 }'
-}
-
-xf() {
-  xbps-query -Ro "*/$1"
 }
 
 xls() {
