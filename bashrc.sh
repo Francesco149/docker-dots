@@ -21,6 +21,9 @@ else
 fi
 export LANG="$LC_ALL"
 export LANGUAGE="$LANG"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
 export ADB_HOST=adbd
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
