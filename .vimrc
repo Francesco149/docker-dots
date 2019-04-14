@@ -65,3 +65,4 @@ au BufRead,BufNewFile,Bufenter *.ms set syntax=groff
 au BufRead,BufNewFile,Bufenter *.vs set syntax=c
 au BufRead,BufNewFile,Bufenter *.fs set syntax=c
 au BufRead,BufNewFile,Bufenter *.glsl set syntax=c
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
