@@ -82,25 +82,20 @@ _tmuxinit() {
 
   tmux new-session -d
   tmux rename-window grind
-  tmux send-keys 'cd ~/grind/itl-linux-fw' C-m
-  tmux send-keys 'vim src/daemon.cpp' C-m
+  tmux send-keys 'neomutt' C-m
   tmux split-window -h
-  tmux send-keys 'cd ~/grind/itl-linux-fw' C-m
+  tmux send-keys 'hangups' C-m
 
   tmux new-window
-  tmux rename-window hours
-  tmux send-keys 'cd ~/grind/hours' C-m
-  tmux send-keys 'git pull' C-m
-  tmux send-keys 'vim hours' C-m
-  tmux split-window -h
-  tmux send-keys 'cd ~/grind/hours' C-m
-  tmux select-pane -l
+  tmux rename-window char
+  tmux send-keys 'weechat' C-m
 
   tmux new-window
   tmux rename-window code
   tmux send-keys 'cd ~/src' C-m
   tmux split-window -h
   tmux send-keys 'cd ~/src' C-m
+  tmux select-pane -l
 
   tmux attach
   xpra detach :9
