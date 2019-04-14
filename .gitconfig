@@ -1,3 +1,6 @@
 [user]
 	email = lolisamurai@tfwno.gf
 	name = Franc[e]sco
+	signingkey = 21859F80E2318F44
+[gpg]
+	program = gpg2
