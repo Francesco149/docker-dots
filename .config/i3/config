@@ -1,5 +1,8 @@
 # this config is still a work in progress
 
+default_border pixel 1
+default_floating_border pixel 1
+
 set_from_resource $main_font mainFont "pango:monospace"
 set_from_resource $main_font_xft mainFontXft "monospace"
 set_from_resource $main_font_pango mainFontPango "pango:monospace"
@@ -90,8 +93,6 @@ exec --no-startup-id \
 font "$main_font"
 bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
 
-default_border pixel
-default_floating_border pixel
 floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
