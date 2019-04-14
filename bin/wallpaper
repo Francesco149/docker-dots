@@ -1,7 +1,15 @@
 #!/bin/sh
 
+mpvflags=" --loop --really-quiet --osd-level=0 --osc=no --scale=nearest "
 if [ ! -f ~/.staticwall ]; then
-  mpv --scale=nearest --wid=0 --loop ~/wallpaper.mp4
+  if pgrep -f compton 2>&1 >/dev/null; then
+    # below, sticky, fullscreen, skip taskbar, no focus, override_redirect,
+    # desktop type window
+    xwinwrap -b -s -fs -st -sp -nf -ov -fdt -- \
+      mpv -wid WID $mpvflags ~/wallpaper.mp4
+  else
+    mpv --wid=0 $mpvflags ~/wallpaper.mp4
+  fi
 else
   feh --bg-scale ~/wallpaper.png
 fi
