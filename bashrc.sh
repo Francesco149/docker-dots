@@ -40,7 +40,7 @@ export PATH="$PATH:/home/loli/src/bdf2x/bin"
 export PATH="$PATH:/home/loli/src/tos-tools"
 export PATH="$PATH:/home/loli/.gem/ruby/2.6.0/bin"
 
-if aplay -l | grep -q PCH; then
+if command -v aplay 2>&1 >/dev/null && aplay -l | grep -q PCH; then
   export ALSA_DEVICE="PCH"
 else
   export ALSA_DEVICE="Intel"
