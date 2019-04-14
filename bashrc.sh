@@ -24,6 +24,9 @@ export LANGUAGE="$LANG"
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export XMODIFIERS="@im=fcitx"
+if [ "$(hostname)" != "libguestfs" ]; then
+  export TOS_FSWRP="ssh -p 2224 192.168.1.2"
+fi
 export ADB_HOST=adbd
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
