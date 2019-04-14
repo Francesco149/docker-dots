@@ -18,4 +18,5 @@ xterm*borderWidth: 0
 xterm*VT100.Translations: #override \
   Shift <Key>Insert: insert-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-  Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Alt <Key>o: exec-formatted("url-open '%t'", PRIMARY) select-start() select-end()
