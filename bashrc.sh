@@ -36,7 +36,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # temporary TODO make packages for these
-export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 export PATH="$PATH:/home/loli/src/tos-tools"
 export PATH="$PATH:/home/loli/.gem/ruby/2.6.0/bin"
