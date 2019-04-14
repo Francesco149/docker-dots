@@ -1,3 +1,7 @@
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
+
 mkfontdir ~/.fonts
 xset +fp ~/.fonts
 xset +fp /usr/share/fonts/misc
@@ -14,4 +18,5 @@ amixer set Speaker mute nocap
 if xrandr | grep -q DVI-I-1; then
   xrandr --output DVI-I-1 --primary
 fi
+fcitx-autostart &
 exec i3
