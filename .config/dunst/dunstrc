@@ -1,0 +1,84 @@
+[global]
+  monitor = 0
+  follow = keyboard
+  geometry = "300x5-30+20"
+  indicate_hidden = yes
+  shrink = no
+  transparency = 0
+  notification_height = 0
+  separator_height = 1
+  padding = 8
+  horizontal_padding = 8
+  frame_width = 1
+  frame_color = "#333333"
+  separator_color = frame
+  sort = yes
+  idle_threshold = 120
+  font = Terminus (TTF) 9
+  line_height = 0
+  markup = full
+  format = "<b>%s</b>\n%b"
+  alignment = left
+  show_age_threshold = 60
+  word_wrap = yes
+  ellipsize = end
+  ignore_newline = no
+  stack_duplicates = true
+  hide_duplicate_count = false
+  show_indicators = yes
+  icon_position = left
+  max_icon_size = 32
+  icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+  sticky_history = yes
+  history_length = 10000
+  dmenu = /home/loli/bin/dmenu -p dunst:
+  browser = /home/loli/bin/url-open
+  always_run_script = true
+  title = Dunst
+  class = Dunst
+  startup_notification = false
+  verbosity = mesg
+  corner_radius = 0
+  force_xinerama = false
+  mouse_left_click = close_current
+  mouse_middle_click = do_action
+  mouse_right_click = close_all
+
+[experimental]
+  per_monitor_dpi = false
+
+[shortcuts]
+  close = ctrl+space
+  close_all = ctrl+shift+space
+  history = ctrl+grave
+  context = ctrl+shift+period
+
+[urgency_low]
+  background = "#000000"
+  foreground = "#bebebe"
+  timeout = 5
+  #icon = /path/to/icon
+
+[urgency_normal]
+  background = "#000000"
+  foreground = "#bebebe"
+  timeout = 10
+  #icon = /path/to/icon
+
+[urgency_critical]
+  background = "#900000"
+  foreground = "#ffffff"
+  frame_color = "#ff0000"
+  timeout = 0
+  # Icon for notifications with critical urgency, uncomment to enable
+  #icon = /path/to/icon
+
+[fullscreen_show_critical]
+  msg_urgency = critical
+  fullscreen = show
+
+[grind]
+  summary = *logos@gmail*
+  urgency = critical
+
+# vim: ft=cfg

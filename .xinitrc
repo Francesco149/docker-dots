@@ -21,4 +21,5 @@ if xrandr | grep -q DVI-I-0; then
   xrandr --output DVI-I-0 --primary
 fi
 fcitx-autostart &
+dunst &
 exec i3
