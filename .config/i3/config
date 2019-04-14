@@ -73,6 +73,8 @@ bindsym $mod+bracketright \
   move position 0 $chatterino_closed_y, \
   focus tiling
 
+for_window [class="Mouse_kb_display"] floating enable, sticky enable
+
 exec --no-startup-id url-open
 exec --no-startup-id chatterino
 exec --no-startup-id Telegram
