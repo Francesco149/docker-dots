@@ -8,6 +8,9 @@ if [ -f ~/.term ]; then
 else
   export TERMINAL=uxterm
 fi
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
+source <(gopass completion bash)
 export BROWSER=url-open
 export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
