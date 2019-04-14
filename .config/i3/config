@@ -27,7 +27,6 @@ for_window [class="Icecat"] move workspace $ws1
 for_window [class="IceCat"] move workspace $ws1
 for_window [title="Save Image"] floating enable, resize set 50 ppt 50 ppt
 for_window [title="Save As"] floating enable, resize set 50 ppt 50 ppt
-for_window [title="Terminal settings"] floating enable, resize set 50 ppt 50 ppt
 for_window [class="Firefox"] move workspace $ws1
 for_window [class="Telegram"] move workspace $ws10
 for_window [class="term-ssh"] move workspace $ws2
@@ -35,7 +34,6 @@ for_window [class="term-rtorrent"] move workspace $ws9
 for_window [class="mpv"] floating enable
 for_window [instance="mpv_tiled"] floating disable
 for_window [class="spacefm"] floating enable
-for_window [class="xgarbage"] floating enable
 for_window [instance="osu!.exe"] \
   floating enable, \
   move position 353 0
