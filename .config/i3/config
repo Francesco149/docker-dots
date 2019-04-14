@@ -92,7 +92,7 @@ exec --no-startup-id \
   i3-sensible-terminal -class "term-scratch"
 
 font "$main_font"
-bindsym $mod+d exec dmenu_run -fn "$main_font_xft"
+bindsym $mod+d exec rofi -show run
 
 floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
