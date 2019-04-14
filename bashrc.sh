@@ -284,5 +284,10 @@ fbss() {
   fbgrab -w 1920 -h 1080 -b 32 -f "$dumpfile" "$(autoname ~/pics/ss _fb.png)"
 }
 
+sget() {
+  useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.11.3 Chrome/65.0.3325.230 Safari/537.36"
+  wget --user-agent "$useragent" "$@"
+}
+
 [ "$(tty)" = "/dev/tty1" ] && [ "$(whoami)" = "loli" ] &&
   ! pgrep -x Xorg >/dev/null && exec startx
