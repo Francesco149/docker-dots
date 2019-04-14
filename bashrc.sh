@@ -28,11 +28,12 @@ if [ "$(hostname)" != "libguestfs" ]; then
   export TOS_FSWRP="ssh -p 2224 192.168.1.2"
 fi
 export ADB_HOST=adbd
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export DOTNET_ROOT="$HOME/dotnet"
-export PATH="$PATH:$HOME/dotnet"
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/dotnet:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # temporary TODO make packages for these
 export PATH="$PATH:/home/loli/3src/chatterino2/build/bin"
