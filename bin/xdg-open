@@ -29,7 +29,7 @@ case "$parent_name" in
 esac
 
 case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
-  http://*|https://*)
+  http://*|https://*|*.html|*.htm)
     exec $prefix url-open "$1" ;;
   tg://*)
     exec Telegram -- "$1" ;;
@@ -49,8 +49,18 @@ case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
   *.pdf)
     exec $prefix zathura "$1" ;;
   *)
-    echo "$1" | xclip
-    echo "$1" | xclip -sel cli
-    exit 3
+    case "$(file "$1" --mime --brief)" in
+      text/html\;*)
+        f="$(mktemp --suffix=.html)"
+        cp "$1" "$f"
+        url-open "$f"
+        rm -rf "$f"
+        ;;
+      *)
+        echo "$1" | xclip
+        echo "$1" | xclip -sel cli
+        exit 3
+        ;;
+    esac
     ;;
 esac
