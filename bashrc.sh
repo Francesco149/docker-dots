@@ -16,8 +16,8 @@ export TIMEZONE="Europe/Rome"
 export TZ="$TIMEZONE"
 if [ "$TERM" = rxvt ]; then
   export LC_ALL="en_US.ISO-8859-1"
-  export LANG="$LC_ALL"
-  export LANGUAGE="$LANG"
+else
+  export LC_ALL="en_US.UTF-8"
 fi
 export ADB_HOST=adbd
 export PATH="$PATH:$HOME/bin"
