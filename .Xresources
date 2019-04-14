@@ -4,27 +4,17 @@
 #define MAINFONT_NAME Terminus (TTF)
 #define MAINFONT_SIZE 12
 #define MAINFONT_SIZE_PT 9
-!for some reason aterm doesnt use the preprocessor
-aterm*font: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
-aterm*boldFont: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
-aterm*scrollBar: false
-aterm*shading: 10
-aterm*fading: 100
-aterm*borderLess: false
-aterm*borderWidth: 0
-aterm*transparent: true
-aterm*color12: royalblue
-aterm*foreground: grey
 mainFont: MAINFONT
 mainFontXft: MAINFONT_NAME-MAINFONT_SIZE_PT
 mainFontPango: pango:MAINFONT_NAME MAINFONT_SIZE_PT
 xterm*font: MAINFONT
-st*font: MAINFONT MAINFONT_SIZE
 xterm*boldFont: MAINFONT
 xterm*allowBoldFonts: false
-xterm*foreground: grey
+xterm*foreground: gray
 xterm*background: black
 xterm*termName: xterm-256color
+xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+xterm*borderWidth: 0
 xterm*VT100.Translations: #override \
   Shift <Key>Insert: insert-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\

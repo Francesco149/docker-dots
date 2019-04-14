@@ -5,9 +5,8 @@ export EDITOR=$VISUAL
 if [ -f ~/.term ]; then
   term=$(cat ~/.term)
   export TERMINAL="$term"
-  export TERM=xterm-256color
 else
-  export TERMINAL=aterm
+  export TERMINAL=uxterm
 fi
 export BROWSER=url-open
 export TIMEZONE="Europe/Rome"

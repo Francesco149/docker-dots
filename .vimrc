@@ -15,7 +15,7 @@ set nowrap
 set modeline
 set modelines=5
 set noswapfile
-set t_Co=16
+set t_Co=256
 
 function NoTabs()
     set expandtab
@@ -34,7 +34,7 @@ endfunction
 function Columns(n)
     set textwidth=0
     let &colorcolumn=join(range(a:n + 1,a:n + 1),",")
-    highlight ColorColumn ctermbg=16
+    highlight ColorColumn ctermbg=8
 endfunction
 
 function NoColumns()

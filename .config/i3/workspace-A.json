@@ -6,16 +6,8 @@
     "type": "con",
     "nodes": [
         {
-            "border": "pixel",
-            "current_border_width": 2,
             "floating": "auto_off",
-            "geometry": {
-               "height": 868,
-               "width": 851,
-               "x": 92,
-               "y": 92
-            },
-            "name": "Telegram (25)",
+            "name": "Telegram",
             "percent": 1,
             "swallows": [
                {
@@ -28,20 +20,12 @@
 }
 
 {
-    "border": "pixel",
-    "current_border_width": 2,
     "floating": "auto_off",
-    "geometry": {
-       "height": 532,
-       "width": 964,
-       "x": 0,
-       "y": 0
-    },
-    "name": "aterm",
+    "name": "xterm",
     "percent": 0.5,
     "swallows": [
        {
-        "title": "^.*htop$"
+        "class": "^term-htop$"
        }
     ],
     "type": "con"
