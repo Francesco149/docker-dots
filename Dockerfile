@@ -6,8 +6,8 @@ RUN xbps-install -Sy vim gcc tmux git openssh bash glibc-locales wget \
 RUN xbps-install -Sy void-repo-multilib && \
   xbps-install -Sy && \
   xbps-install -Sy gcc-multilib
-RUN echo 'en_US.UTF-8 UTF-8/' >> /etc/default/libc-locales && \
-  echo 'en_US ISO-8859-1/' >> /etc/default/libc-locales && \
+RUN echo 'en_US.UTF-8 UTF-8' >> /etc/default/libc-locales && \
+  echo 'en_US ISO-8859-1' >> /etc/default/libc-locales && \
   xbps-reconfigure -f glibc-locales && \
   echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ENV TIMEZONE="Europe/Rome"
