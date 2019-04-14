@@ -1,11 +1,9 @@
 syntax on
 set relativenumber
-colorscheme desert
 hi LineNr ctermfg=darkgrey
 set hlsearch
 
-"hi Todo term=standout ctermfg=0 ctermbg=11 guifg=orangered guibg=yellow2
-hi Todo term=standout ctermfg=0 ctermbg=3
+set background=dark
 set clipboard=unnamedplus
 set shiftwidth=2
 set smarttab
