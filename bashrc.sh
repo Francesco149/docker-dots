@@ -19,6 +19,8 @@ if [ "$TERM" = rxvt ]; then
 else
   export LC_ALL="en_US.UTF-8"
 fi
+export LANG="$LC_ALL"
+export LANGUAGE="$LANG"
 export ADB_HOST=adbd
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
