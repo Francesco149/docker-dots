@@ -13,6 +13,8 @@ set nowrap
 set modeline
 set modelines=5
 set noswapfile
+set undodir=~/.vim/undo/
+set undofile
 set t_Co=256
 
 function NoTabs()
