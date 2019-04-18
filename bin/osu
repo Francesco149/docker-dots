@@ -2,12 +2,13 @@
 
 export WINEVERPATH="/opt/wine-osu/"
 export LD_LIBRARY_PATH="/opt/wine-osu/lib32:/opt/wine-osu/lib/wine"
+export LD_PRELOAD="/usr/lib/libfakeflock.so /usr/lib32/libfakeflock.so"
 export PATH="/opt/wine-osu/bin:$PATH"
 export WINELOADER="/opt/wine-osu/bin/wine"
 export WINESERVER="/opt/wine-osu/bin/wineserver"
 export WINEDLLPATH="/opt/wine-osu/lib/wine/"
 export WINEARCH=win32
-export WINEPREFIX="$HOME/quotafix/osu-wine"
+export WINEPREFIX="$HOME/osu-wine"
 export vblank_mode=0
 export STAGING_AUDIO_DURATION=30000
 export STAGING_AUDIO_DEFAULT_PERIOD=10000
@@ -25,6 +26,6 @@ for a in "$@"; do
 done
 
 olddir="$(pwd)"
-cd "$HOME/quotafix/osu/" || exit
+cd "$HOME/osu/" || exit
 wine './osu!.exe' "$@"
 cd "$olddir" || exit
