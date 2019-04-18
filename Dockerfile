@@ -82,6 +82,7 @@ RUN xbps-install -Sy clang llvm
 RUN xbps-install -Sy notmuch
 RUN xbps-install -Sy glfw-devel
 RUN xbps-install -Sy pingutils
+RUN xbps-install -Sy meson
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
