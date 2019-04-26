@@ -4,7 +4,10 @@ steambase="$HOME/.local/share/Steam"
 apps="$steambase/steamapps/common"
 
 listversions() {
-  ls -1 "$apps" | grep "^Proton " | cut -d' ' -f2- | sort -r
+  # sort by version (3.7 < 3.16)
+  ls -1 "$apps" | grep "^Proton " | cut -d ' ' -f2- |
+  awk --field-separator '.' '{printf "%04d%04d ",$1,$2;print $0}' |
+  sort --numeric-sort --reverse | cut -d' ' -f2-
 }
 
 case "$1" in
