@@ -1,0 +1,40 @@
+#!/bin/sh
+
+steambase="$HOME/.local/share/Steam"
+apps="$steambase/steamapps/common"
+
+listversions() {
+  ls -1 "$apps" | grep "^Proton " | cut -d' ' -f2- | sort -r
+}
+
+case "$1" in
+  ls|list|versions|version)
+    listversions
+    exit 0
+    ;;
+esac
+
+if [ -z "$1" ]; then
+  echo "usage: $0 appid [optional proton version, for example 4.2]"
+  echo "$0 ls to list versions"
+  exit 1
+fi
+
+version="$2"
+if [ -z "$version" ]; then
+  version="$(listversions sort -r | sed 1q)"
+fi
+if [ -z "$version" ]; then
+  echo "couldn't find a suitable proton version"
+  echo "please install proton from steam at library -> tools"
+  exit 1
+fi
+
+echo "using Proton $version"
+mkdir "$steambase/steamapps/compatdata/$1"
+STEAM_COMPAT_DATA_PATH="$steambase/steamapps/compatdata/$1" \
+STEAM_COMPAT_CLIENT_INSTALL_PATH="$steambase" \
+FONTCONFIG_PATH='' \
+"$apps/Proton $version/proton" \
+run ~/.local/share/Steam/legacycompat/iscriptevaluator.exe \
+  --get-current-step $1
