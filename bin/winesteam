@@ -14,7 +14,7 @@ export WINEDLLPATH="$base/lib/wine/"
 export WINEARCH=win64
 export WINEPREFIX="$HOME/quotafix/winesteam"
 export vblank_mode=0
-export GALLIUM_HUD=simple,fps
+export GALLIUM_HUD=simple,fps,cpu,GPU-load,memory-clock,shader-clock,VRAM-usage
 
 echo "wine version: $(wine --version)"
 echo "wineserver version: $(wineserver --version 2>&1)"
