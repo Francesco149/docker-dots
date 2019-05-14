@@ -29,6 +29,8 @@ case "$parent_name" in
 esac
 
 case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
+  lutris:*)
+    exec lutris "$1" ;;
   http://*|https://*|*.html|*.htm)
     exec $prefix url-open "$1" ;;
   tg://*)
