@@ -39,6 +39,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 export PATH="$PATH:/home/loli/src/tos-tools"
 export PATH="$PATH:/home/loli/.gem/ruby/2.6.0/bin"
+export PATH="$PATH:/home/loli/src/v"
 
 if command -v aplay 2>&1 >/dev/null && aplay -l | grep -q PCH; then
   export ALSA_DEVICE="PCH"
@@ -137,6 +138,7 @@ alias e='echo $?'
 alias nonascii='grep --color='auto' -P -n "[\x80-\xFF]"'
 alias nano='nano -liE -T2 --softwrap'
 alias rs='rsync --archive --verbose --recursive'
+alias v='volt3 --os linux'
 
 if [ "$(id -u)" -eq 0 ] ; then
   PS1=''\
