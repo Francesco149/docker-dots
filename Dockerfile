@@ -77,7 +77,7 @@ RUN xbps-install -Sy swig python-devel python3-devel python-wheel \
 RUN xbps-install -Sy SDL-devel SDL2-devel cmake mysql++-devel lua-devel \
   crypto++-devel vte-devel vte3-devel python3-M2Crypto python-M2Crypto
 RUN xbps-install -Sy hangups
-RUN xbps-install -Sy gopass dialog neomutt msmtp offlineimap
+RUN xbps-install -Sy gopass neomutt msmtp isync
 RUN xbps-install -Sy clang llvm
 RUN xbps-install -Sy notmuch
 RUN xbps-install -Sy glfw-devel
