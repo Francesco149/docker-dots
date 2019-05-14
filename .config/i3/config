@@ -38,6 +38,8 @@ for_window [class="spacefm"] floating enable
 for_window [class="doomx64vk.exe"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="shiromino-game"] floating enable
+for_window [class="scrap"] floating enable
+for_window [class="servo-embedding-example"] floating enable
 for_window [instance="osu!.exe"] \
   floating enable, \
   move position 353 0
