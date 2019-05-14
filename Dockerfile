@@ -83,6 +83,10 @@ RUN xbps-install -Sy notmuch
 RUN xbps-install -Sy glfw-devel
 RUN xbps-install -Sy pingutils
 RUN xbps-install -Sy meson
+RUN xbps-install -Sy libunwind-devel gstreamer1-devel \
+  gst-plugins-base1-devel gst-plugins-bad1-devel autoconf213
+RUN xbps-install -Sy pass
+RUN xbps-install -Sy cross-i686-w64-mingw32 cross-x86_64-w64-mingw32
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
   su loli - -c 'source ~/bashrc.sh && _tmuxinit'; \
