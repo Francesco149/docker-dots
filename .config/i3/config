@@ -147,6 +147,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym Ctrl+Shift+2 exec "sharenix -m=fs -n -c"
+bindsym Print exec "sharenix -m=fs -upload=false"
 bindsym Ctrl+Shift+3 exec "sharenix-window"
 bindsym Ctrl+Shift+4 exec "sharenix-section"
 bindsym Ctrl+Shift+5 exec "sharenix -m=c -n -c"
