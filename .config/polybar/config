@@ -36,6 +36,7 @@ height = 27
 radius = 0
 fixed-center = false
 bottom = true
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
