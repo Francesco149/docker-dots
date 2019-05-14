@@ -81,7 +81,7 @@ bindsym $mod+bracketright \
 for_window [class="Mouse_kb_display"] floating enable, sticky enable
 
 exec --no-startup-id url-open
-exec --no-startup-id chatterino
+exec --no-startup-id env LD_PRELOAD=/home/loli/src/nosound.so chatterino
 exec --no-startup-id Telegram
 exec --no-startup-id \
   i3-sensible-terminal -class "term-htop" \
