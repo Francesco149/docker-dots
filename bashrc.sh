@@ -265,6 +265,7 @@ alias fucast='ucast -s $(screenres) -i ${DISPLAY}+$(screencoords)'
 alias scast='cast $(ffrectsel)'
 alias scast120='CAST_FPS=120 cast $(ffrectsel)'
 alias sucast='ucast $(ffrectsel)'
+alias psc='pscircle --output-width=1920 --output-height=1080 --tree-font-size=10 --tree-radius-increment=170,100 --toplists-font-size=10 --background-color=000000 --dot-radius=3 --link-width=1.5 --dot-border-width=0 --link-color-min=333333 --link-color-max=666666 --dot-color-min=AF5500 --dot-color-max=FFCC00 --cpulist-center=700:0'
 
 tgrep() {
   if [ "$#" -lt 1 ]; then
