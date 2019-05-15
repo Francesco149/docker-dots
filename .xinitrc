@@ -13,7 +13,6 @@ rm -f ~/.local/share/chatterino/Misc/running_*
 cp ~/bak/chatterino.json  .local/share/chatterino/Settings/settings.json
 setxkbmap -option caps:swapescape
 parcellite &
-command -v compton 2>&1 >/dev/null && compton &
 amixer set Speaker mute nocap
 if xrandr | grep -q DVI-I-0; then
   xrandr --output DVI-I-0 --primary
