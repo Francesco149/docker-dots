@@ -1,3 +1,3 @@
 @import "/usr/share/rofi/themes/Adapta-Nokto.rasi"
 
-* { font: "Terminus 9"; }
+* { font: "Terminus (TTF) 9"; }
