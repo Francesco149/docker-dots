@@ -33,11 +33,14 @@ if [ -z "$version" ]; then
   exit 1
 fi
 
+PROTONPATH="${PROTONPATH:-$apps/Proton $version}"
+
 echo "using Proton ${PROTONPATH:-$version}"
 mkdir "$steambase/steamapps/compatdata/$1"
 STEAM_COMPAT_DATA_PATH="$steambase/steamapps/compatdata/$1" \
 STEAM_COMPAT_CLIENT_INSTALL_PATH="$steambase" \
 FONTCONFIG_PATH='' \
-"${PROTONPATH:-$apps/Proton $version/proton}" \
+LD_LIBRARY_PATH="$PROTONPATH/dist/lib64/wine" \
+"$PROTONPATH/proton" \
 run ~/.local/share/Steam/legacycompat/iscriptevaluator.exe \
   --get-current-step $1
