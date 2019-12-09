@@ -31,7 +31,8 @@ for_window [class="Firefox"] move workspace $ws1
 for_window [class="Steam"] move workspace $ws9
 for_window [class="Telegram"] move workspace $ws10
 for_window [class="term-ssh"] move workspace $ws2
-for_window [class="term-rtorrent"] move workspace $ws9
+for_window [class="Virt-manager"] move workspace $ws8
+for_window [class="term-rtorrent"] move workspace $ws8
 for_window [class="mpv"] floating enable
 for_window [instance="mpv_tiled"] floating disable
 for_window [class="spacefm"] floating enable
@@ -40,6 +41,7 @@ for_window [class="Wine"] floating enable
 for_window [class="shiromino-game"] floating enable
 for_window [class="scrap"] floating enable
 for_window [class="servo-embedding-example"] floating enable
+for_window [title="Compute shader N-body system"] floating enable
 for_window [instance="osu!.exe"] \
   floating enable, \
   move position 353 0
@@ -50,7 +52,7 @@ for_window [title="osu!lazer"] \
 
 for_window [class="term-scratch"] \
   floating enable, \
-  resize set 50 ppt 50 ppt, \
+  resize set 60 ppt 50 ppt, \
   move scratchpad
 
 bindsym $mod+grave \
@@ -80,7 +82,7 @@ bindsym $mod+bracketright \
 
 for_window [class="Mouse_kb_display"] floating enable, sticky enable
 
-exec --no-startup-id url-open
+exec --no-startup-id firefox
 exec --no-startup-id env LD_PRELOAD=/home/loli/src/nosound.so chatterino
 exec --no-startup-id Telegram || telegram-desktop
 exec --no-startup-id \
@@ -89,15 +91,13 @@ exec --no-startup-id \
 exec --no-startup-id \
   i3-sensible-terminal -class "term-ssh" \
     -e 'ssh -Y 192.168.1.2 -t "tmux a; bash"'
-exec --no-startup-id \
-  i3-sensible-terminal -class "term-rtorrent" \
-    -e 'ssh -p 23 -Y 192.168.1.2 -t "tmux a; bash"'
 exec --no-startup-id sleep 2 && wallpaper
 exec --no-startup-id \
   i3-sensible-terminal -class "term-scratch"
+exec --no-startup-id virt-manager
 
 font "$main_font"
-bindsym $mod+d exec "rofi -show combi -combi-modi drun,run,ssh,window,calc -modi combi"
+bindsym $mod+d exec "rofi -show combi"
 
 floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
@@ -151,6 +151,7 @@ bindsym Print exec "sharenix -m=fs -upload=false"
 bindsym Ctrl+Shift+3 exec "sharenix-window"
 bindsym Ctrl+Shift+4 exec "sharenix-section"
 bindsym Ctrl+Shift+5 exec "sharenix -m=c -n -c"
+bindsym Ctrl+Shift+k exec xkill -id $(xwininfo | grep id: | cut -d ' ' -f4)
 bindsym $mod+Shift+m exec \
   cat ~/.emoji | rofi -dmenu | awk '{ printf $1 }' | xclip -sel cli
 bindsym $mod+Shift+a exec \

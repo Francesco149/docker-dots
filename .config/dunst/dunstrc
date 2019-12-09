@@ -81,4 +81,8 @@
   summary = *logos@gmail*
   urgency = critical
 
+[mail]
+  summary = *mutt-wizard*
+  script = ~/bin/alert.sh
+
 # vim: ft=cfg

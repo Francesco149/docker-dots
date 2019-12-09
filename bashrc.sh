@@ -34,12 +34,20 @@ export DOTNET_ROOT="$HOME/dotnet"
 export PATH="$HOME/dotnet:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # temporary TODO make packages for these
 export PATH="$PATH:/home/loli/src/bdf2x/bin"
 export PATH="$PATH:/home/loli/src/tos-tools"
 export PATH="$PATH:/home/loli/.gem/ruby/2.6.0/bin"
 export PATH="$PATH:/home/loli/src/v"
+export PATH="/home/loli/.pyenv/bin:$PATH"
+export PATH="/home/loli/sw/dex-tools-2.1-SNAPSHOT:$PATH"
+if [ "$(id -u)" -ne 0 ] ; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 if command -v aplay 2>&1 >/dev/null && aplay -l | grep -q PCH; then
   export ALSA_DEVICE="PCH"
@@ -70,9 +78,9 @@ _tmuxinit() {
   fi
 
   # shellcheck disable=SC2009
+  export DISPLAY=:9
   ps -f -u "$USER" | grep -q '[x]pra' || xpra start :9
   xpra attach :9 --opengl=no > /tmp/xpra-attach.log 2>&1 &
-  export DISPLAY=:9
 
   if tmux attach; then
     xpra detach :9
@@ -141,10 +149,10 @@ alias yq='yay -Ss'
 alias yl='yay -Qqe'
 alias yf='yay -Fs'
 alias e='echo $?'
-alias nonascii='grep --color='auto' -P -n "[\x80-\xFF]"'
+alias nonascii='grep --color=auto -P -n "[\x80-\xFF]"'
 alias nano='nano -liE -T2 --softwrap'
 alias rs='rsync --archive --verbose --recursive'
-alias v='volt3 --os linux'
+alias xk='xkill -id $(xwininfo | grep id: | cut -d " " -f4)'
 
 if [ "$(id -u)" -eq 0 ] ; then
   PS1=''\
@@ -303,3 +311,5 @@ sget() {
 
 [ "$(tty)" = "/dev/tty1" ] && [ "$(whoami)" = "loli" ] &&
   ! pgrep -x Xorg >/dev/null && exec startx
+
+#command -v fish 2>&1 >/dev/null && exec fish

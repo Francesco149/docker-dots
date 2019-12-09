@@ -2,6 +2,7 @@ syntax on
 set relativenumber
 hi LineNr ctermfg=darkgrey
 set hlsearch
+"set fencs=ucs-bom,utf-16le,utf-8,default,latin1
 
 set background=dark
 set clipboard=unnamedplus
@@ -18,27 +19,27 @@ set undofile
 set t_Co=256
 
 function NoTabs()
-    set expandtab
-    set softtabstop=0
-    set listchars=tab:>~,nbsp:_,trail:.
-    set list
+  set expandtab
+  set softtabstop=0
+  set listchars=tab:>~,nbsp:_,trail:.
+  set list
 endfunction
 
 function Tabs()
-    set noexpandtab
-    set softtabstop=4
-    set listchars=tab:\ \ ,nbsp:_,trail:.
-    set list
+  set noexpandtab
+  set softtabstop=4
+  set listchars=tab:\ \ ,nbsp:_,trail:.
+  set list
 endfunction
 
 function Columns(n)
-    set textwidth=0
-    let &colorcolumn=join(range(a:n + 1,a:n + 1),",")
-    highlight ColorColumn ctermbg=8
+  set textwidth=0
+  let &colorcolumn=join(range(a:n + 1,a:n + 1),",")
+  highlight ColorColumn ctermbg=8
 endfunction
 
 function NoColumns()
-    set colorcolumn=0
+  set colorcolumn=0
 endfunction
 
 call NoTabs()
@@ -61,9 +62,21 @@ nnoremap <silent> <F5>
 map <leader>r :source ~/.vimrc<CR>
 map <leader>h :nohl<CR>
 
+function AutoPepAndReload2()
+  silent! !autopep8 --indent-size=2 -i '%:p'
+  edit!
+endfunction
+
+function AutoPepAndReload4()
+  silent! !autopep8 --indent-size=4 -i '%:p'
+  edit!
+endfunction
+
 au BufRead,BufNewFile,Bufenter *.ms set syntax=groff
 au BufRead,BufNewFile,Bufenter *.vs set syntax=c
 au BufRead,BufNewFile,Bufenter *.fs set syntax=c
 au BufRead,BufNewFile,Bufenter *.glsl set syntax=c
-au BufRead,BufNewFile,Bufenter *.v set syntax=go
+au BufRead,BufNewFile,Bufenter *.v set syntax=go | call Tabs()
 au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+au BufWritePost *.py call AutoPepAndReload2()
+au BufWritePost */nonoCAPTCHA/*/*.py call AutoPepAndReload4()

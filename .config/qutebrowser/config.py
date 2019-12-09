@@ -33,6 +33,6 @@ config.set("url.searchengines", {
   "eh": "https://g.e-hentai.org/?f_doujinshi=1&f_manga=1&f_artistcg=1&f_gamecg=1&f_western=0&f_non-h=1&f_imageset=1&f_cosplay=0&f_asianporn=0&f_misc=1&f_search={}&f_apply=Apply+Filter",
 })
 
-config.set("content.host_blocking.whitelist", [ 'kiwifarms.net' ])
+config.set("content.host_blocking.whitelist", [ 'kiwifarms.net', 'cfus.aliyun.com', 'gm.mmstat.com' ])
 
 config.bind("<Ctrl-m>", "spawn utl-open {url}")

@@ -1,3 +1,19 @@
-@import "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+configuration {
+  drun-display-format: "{name} [| <span weight='light' size='small'>{generic}</span>]";
+  combi-modi: "drun,run,ssh,window,calc";
+  modi: "combi";
+}
 
-* { font: "Terminus (TTF) 9"; }
+@import "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+* {
+  font: "Unifont 12";
+  foreground: #ccc;
+  alternate-normal-background: #111;
+  alternate-urgent-background: #111;
+  normal-background:           #111;
+  active-background:           #111;
+  background:                  #111;
+  selected-normal-background:  #555;
+  selected-active-background:  #555;
+  selected-urgent-background:  #555;
+}

@@ -26,6 +26,6 @@ for a in "$@"; do
 done
 
 olddir="$(pwd)"
-cd "$HOME/osu/" || exit
-wine './osu!.exe' "$@"
+cd '/mnt/wangblows/Users/BFBuilds/AppData/Local/osu!' || exit
+nice -99 wine './osu!.exe' "$@"
 cd "$olddir" || exit

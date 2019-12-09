@@ -1,11 +1,12 @@
 FROM voidlinux/voidlinux
 
 RUN xbps-install -Syu && \
+  xbps-pkgdb -m hold libcrypto45 libtls19 libssl47 libuuid libblkid libmount && \
   xbps-install -Sy vim-x11 gcc tmux git openssh bash glibc-locales wget \
   curl ncurses sudo make automake pkg-config libtool autoconf-archive \
   libressl-devel tzdata xz
 
-RUN xbps-install -Sy void-repo-multilib && \
+RUN xbps-install -Sy void-repo-multilib void-repo-nonfree && \
   xbps-install -Sy && \
   xbps-install -Sy gcc-multilib
 
@@ -25,7 +26,7 @@ RUN xbps-install -Sy \
   shellcheck neofetch valgrind man man-pages-posix cvs \
   bdftopcf ffmpeg xtools busybox xclip xauth cloc megatools \
   rxvt-unicode-terminfo apache-maven gnupg2 p7zip \
-  hangups gopass neomutt msmtp isync clang llvm notmuch pass
+  hangups gopass neomutt msmtp isync clang llvm notmuch pass w3m iputils
 
 RUN pip install awscli streamlink youtube_dl
 RUN gem install gist
@@ -67,6 +68,10 @@ RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN echo "X11Forwarding yes" >> /etc/ssh/sshd_config && \
   echo "X11DisplayOffset 10" >> /etc/ssh/sshd_config && \
   echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
+
+RUN curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.35.0/ktlint && \
+  chmod a+x ktlint && \
+  sudo mv ktlint /usr/local/bin/
 
 EXPOSE 22
 CMD [ "/bin/bash", "-c", " \
